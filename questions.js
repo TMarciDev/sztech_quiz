@@ -1,4 +1,3 @@
-//missing: 5.ea
 const questions = [
 	{
 		q: 'Mely álltás hamis? A követelmények feltárását nehezítheti, hogy...',

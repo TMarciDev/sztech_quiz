@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>QUIZ</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+			crossorigin="anonymous"
+		/>
+	</head>
+
+	<body style="margin: 20px 0px 0px 30%">
+		<div class="start-container">
+			<button class="start btn btn-primary">Start new quiz</button>
+		</div>
+		<div class="questions-container" style="display: none">
+			<p class="question">Question</p>
+			<input type="radio" id="1" name="answer" class="radio" />
+			<label for="1" class="label">label1</label><br />
+			<input type="radio" id="2" name="answer" class="radio" />
+			<label for="2" class="label">label2</label><br />
+			<input type="radio" id="3" name="answer" class="radio" />
+			<label for="3" class="label">label3</label><br />
+			<input type="radio" id="4" name="answer" class="radio" />
+			<label for="4" class="label">label4</label><br />
+
+			<button class="check btn btn-primary">Check</button>
+			<p class="points">0/0</p>
+		</div>
+	</body>
+	<script src="questions.js"></script>
+	<script src="index.js"></script>
+</html>

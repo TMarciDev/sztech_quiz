@@ -13,6 +13,9 @@ var all = 0;
 
 startButton.addEventListener('click', () => {
 	shuffle(questions);
+	questions.map((q) => {
+		shuffle(q.a);
+	});
 
 	currentQ = 0;
 	questionContainer.style.display = 'block';

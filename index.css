@@ -1,0 +1,47 @@
+.invisible {
+    display: none;
+}
+
+body {
+    display: flex;
+    align-items: middle;
+    justify-content: center;
+}
+
+.quiz-container {
+    width: 900px;
+}
+
+@media only screen and (max-width: 900px) {
+    body {
+      margin: 20px
+    }
+  }
+
+.start-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.spaced {
+    margin: 20px 0px 20px 0px;
+}
+
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+}
+
+.controls{
+    display: flex;
+}
+
+.points {
+    margin-left: 20px
+}
+
+.opt {
+    margin-top: 10px;;
+}

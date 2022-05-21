@@ -5,11 +5,31 @@ const radios = document.querySelectorAll('.radio');
 const labels = document.querySelectorAll('.label');
 const checkButton = document.querySelector('.check');
 const points = document.querySelector('.points');
+const selector = document.querySelector('.quiz-selector');
 
 var currentQ;
 
 var correct = 0;
 var all = 0;
+
+var questions = questions1;
+questionContainer.classList.add('invisible');
+
+selector.addEventListener('change', (e) => {
+	switch (e.target.value) {
+		case '1': {
+			questions = questions1;
+			break;
+		}
+		case '2': {
+			questions = questions2;
+			break;
+		}
+		default: {
+			questions = questions3;
+		}
+	}
+});
 
 startButton.addEventListener('click', () => {
 	shuffle(questions);
@@ -18,7 +38,8 @@ startButton.addEventListener('click', () => {
 	});
 
 	currentQ = 0;
-	questionContainer.style.display = 'block';
+	questionContainer.classList.remove('invisible');
+
 	correct = 0;
 	all = 0;
 	points.innerText =
@@ -82,9 +103,16 @@ const newQuestion = () => {
 	if (length < 4) {
 		radios[3].style.visibility = 'hidden';
 		labels[3].style.visibility = 'hidden';
+
+		if (length < 3) {
+			radios[2].style.visibility = 'hidden';
+			labels[2].style.visibility = 'hidden';
+		}
 	} else {
 		radios[3].style.visibility = 'visible';
 		labels[3].style.visibility = 'visible';
+		radios[2].style.visibility = 'visible';
+		labels[2].style.visibility = 'visible';
 	}
 };
 

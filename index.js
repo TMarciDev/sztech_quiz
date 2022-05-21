@@ -29,13 +29,18 @@ selector.addEventListener('change', (e) => {
 			questions = questions3;
 		}
 	}
+	startQuiz();
 });
+var saw = false;
 
-startButton.addEventListener('click', () => {
+const startQuiz = () => {
 	shuffle(questions);
 	questions.map((q) => {
 		shuffle(q.a);
 	});
+	saw = false;
+	checkButton.innerText = 'Check';
+	checkButton.disabled = false;
 
 	currentQ = 0;
 	questionContainer.classList.remove('invisible');
@@ -46,9 +51,11 @@ startButton.addEventListener('click', () => {
 		all + '/' + correct + ' correct\n' + (questions.length - all) + ' left';
 
 	newQuestion();
-});
+};
 
-var saw = false;
+startButton.addEventListener('click', () => {
+	startQuiz();
+});
 
 checkButton.addEventListener('click', () => {
 	if (!saw) {

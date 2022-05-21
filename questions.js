@@ -1028,11 +1028,11 @@ const questions2 = [
 			},
 			{
 				a: 'A ButtonGroup egy vizuális keretbe fogja össze a RadioButton-okat.',
-				correct: true,
+				correct: false,
 			},
 			{
 				a: 'A kölcsönös kizárásban lévő RadioButton-okhoz csoportot kell rendelni.',
-				correct: false,
+				correct: true,
 			},
 		],
 	},
@@ -1403,11 +1403,697 @@ const questions2 = [
 
 // kapott kérdéssor opciók goes here
 const questions3 = [
+	//szálkezelés
 	{
-		q: 'DUMMY question',
+		q: 'Mi lesz az eredménye egy olyan objektum wait() metódusának hívásának, amelynek a hívó szál nem birtokolja a monitor lockját?',
 		a: [
-			{ a: 'Igaz', correct: false },
-			{ a: 'Ellipszissel', correct: true },
+			{ a: 'State exception', correct: false },
+			{ a: 'IllegalMonitorState exception', correct: true },
+			{ a: 'Illegal exception', correct: false },
+			{ a: 'Monitor exception', correct: false },
 		],
+	},
+	{
+		q: 'Mi a szálak alapértelmezett prioritása?',
+		a: [
+			{ a: '0', correct: false },
+			{ a: '1', correct: false },
+			{ a: '5', correct: true },
+			{ a: '12', correct: false },
+		],
+	},
+	{
+		q: 'Melyek Atomi műveletek az alábbiak közül?',
+		a: [
+			{ a: 'Minden primitív típusú változó írása/olvasása', correct: false },
+			{ a: 'Referencia változók írása/olvasása', correct: true },
+			{ a: 'Mindkettő', correct: false },
+			{ a: 'Egyik sem', correct: false },
+		],
+	},
+	{
+		q: 'Melyik állítás nem igaz az immutable osztályokra?',
+		a: [
+			{ a: 'Az osztályt final-ként kell deklarálni a leszármaztatás megelőzése végett', correct: false },
+			{ a: 'Az osztály nem tartalmazhat olyan metódusokat, amelyek az állapotát a konstruktor le-futása után megváltoztatják.', correct: false },
+			{ a: 'Az osztály összes adattagja private final-ként kell deklarálni', correct: true },
+			{ a: 'Az objektum típusú adattagokról mindig másolatot kell készíteni amikor azt getter metódusból ki kell adni és konstruktor paraméterből való inicializáció', correct: false },
+		],
+	},
+	{
+		q: 'Melyik állítás igaz az alábbi kódra?',
+		a: [
+			{ a: 'A run metódus szinkronizálása szálbiztossá tenné az osztályt', correct: false },
+			{ a: 'Az osztály szálbiztos', correct: false },
+			{ a: 'A foo metódus statikussá tétele szálbiztossá tenné az oszályt', correct: true },
+			{ a: 'Futtatáskor exception-t eredményez', correct: false },
+		],
+	},
+
+	//adatbázis/jdbc
+	{
+		q: 'Melyik nem DML utasítás az alábbi SQL utasítások közül?',
+		a: [
+			{ a: 'update [table] set ...', correct: false },
+			{ a: 'delete from [table] ...', correct: false },
+			{ a: 'alter table ...', correct: true },
+			{ a: 'insert into [table] ...', correct: false },
+		],
+	},
+	{
+		q: 'Mely állítások igazak a JDBC kapcsolat felépítésével kapcsolatban?',
+		a: [
+			{ a: 'DriverManager osztályon keresztül juthatunk pool-ozott kapcsolathoz.', correct: false },
+			{ a: 'DataSource osztályon keresztül juthatunk pool-ozott kapcsolathoz.', correct: true },
+			{ a: 'DataSource osztállyal történő kapcsolódás esetén meg kell adnunk az adatbázishoz tartozó connection URL-t.', correct: false },
+			{ a: 'Adatbázis kapcsolatot a DriverManger.getConnection hívással kaphatunk.', correct: true },
+		],
+		multiply: true,
+	},
+	{
+		q: 'Mely információ nem nyerhető ki az SQLException objektumból?',
+		a: [
+			{ a: 'SQL státusz kód.', correct: false },
+			{ a: 'Driver/Adatbázis specifikus hibakód.', correct: false },
+			{ a: 'A hibát okozó adatbázis kérés.', correct: true },
+			{ a: 'A felmerült hiba leírása.', correct: false },
+		],
+	},
+	{
+		q: 'Melyik helytelen módja a resultSet adatainak elérésének?',
+		a: [
+			{ a: 'String value0 = rs.getString(0);', correct: true },
+			{ a: 'String value1 = rs.getString(1);', correct: false },
+			{ a: 'int value2 = rs.getInt(2);', correct: false },
+			{ a: 'int value3 = rs.getInt(“ADDR_LN1");', correct: false },
+		],
+	},
+	{
+		q: 'Melyik állítás igaz az alábbiak közül?',
+		a: [
+			{ a: 'CallableStatement kiterjeszti a PreparedStatement interface-t. Ez az interface használható SQL tárolt eljárások hívására.', correct: true },
+			{ a: 'Statement kiterjeszti a PreparedStatement interface-t és akkor használatos, amikor az SQL lekérdezést nem szükséges többször futtatnunk.', correct: false },
+			{ a: 'PreparedStatement statikus lekérdezések indítására használatos (pl.: select * from table), ezért PreparedStatement-ek nem paraméterezhetőek.', correct: false },
+			{ a: 'PreparedStatement használatával lehetséges SQL utasítások batch feldolgozása.', correct: true },
+		],
+		multiply: true,
+	},
+	{
+		q: 'Hogyan indítható új adatbázis tranzakció?',
+		a: [
+			{ a: 'A Connection-höz egy Transaction object kérésével és azon begin() metódus hívással.', correct: false },
+			{ a: 'Connection-höz egy Transaction object kérésével és annak autoCommit tulajdonságánal false-ra állításával.', correct: false },
+			{ a: 'A Connection beginTransaction metódusának hívásával.', correct: false },
+			{ a: 'A Connection autoCommit tulajdonságának false-ra állításával és egy SQL utasítás végrehatásával.', correct: true },
+		],
+	},
+	{
+		q: 'Mire való a tranzakció az adatbázisoknál?',
+		a: [
+			{ a: 'Tárolt eljárások futtatására', correct: false },
+			{ a: 'Több művelet atomikénti végrehajtására', correct: false },
+			{ a: 'Kapcsolt táblás lekérdezésre', correct: false },
+			{ a: 'Átutalások elnevezésére', correct: true },
+		],
+	},
+	{
+		q: 'Melyik kapcsolatot szokás kapcsolótáblával leképezni?',
+		a: [
+			{ a: '1-n kapcsolatot', correct: false },
+			{ a: 'm-1 kapcsolatot', correct: false },
+			{ a: 'm-n kapcsolatot', correct: true },
+			{ a: 'kapcsolatot', correct: false },
+		],
+	},
+	{
+		q: 'Mi nem része az Egyed-Kapcsolat diagramnak?',
+		a: [
+			{ a: 'Attribútum', correct: false },
+			{ a: 'Entitás', correct: false },
+			{ a: 'Kulcsok', correct: false },
+			{ a: 'Osztály', correct: true },
+		],
+	},
+	{
+		q: 'Melyik nem igaz a JTable és a modell kapcsolatáról?',
+		a: [
+			{ a: 'A JTable nem tartalmaz adatot', correct: false },
+			{ a: 'A modell felüldefiniálható', correct: false },
+			{ a: 'A modell nem tudja értesíteni a JTable-t a változásról', correct: true },
+			{ a: 'A modell reprezentációja eltérhet a JTable által lekérdezett adatokétól', correct: false },
+		],
+	},
+
+	//uml
+	{
+		q: 'Melyek a szoftverek alapvető minőségi mutatói?',
+		a: [
+			{ a: 'Szállítási idő, megvalósítási költség, hardver- és szoftverigény.', correct: false },
+			{ a: 'Ergonómia, használhatóság, kompatibilitás, hardver- és szoftverigény.', correct: false },
+			{ a: 'Karbantarthatóság, megbízhatóság, biztonság, hatékonyság, használhatóság.', correct: true },
+			{ a: 'Módosíthatóság, bővíthetőség, felbonthatóság, újrahasználhatóság, megbízhatóság.', correct: false },
+		],
+	},
+	{
+		q: 'Melyik a használati történet (user story) szerkezete?',
+		a: [
+			{ a: 'USER felhasználó IN USE CASE használati eset WITH RELATION kapcsolat', correct: false },
+			{ a: 'AS A szerepkör USE funkció TO cél', correct: false },
+			{ a: 'WHEN tevékenység APPLYING funkció IN ORDER TO cél', correct: false },
+			{ a: 'GIVEN környezet WHEN tevékenység THEN hatás', correct: true },
+		],
+	},
+	{
+		q: 'Mi a helyes sorrendje a követelményelemzésnek?',
+		a: [
+			{ a: 'megvalósíthatósági elemzés, követelmény feltárás, követelmény specifikáció, követelmény validáció', correct: true },
+			{ a: 'követelmény feltárás, követelmény specifikáció, követelmény validáció, megvalósíthatósági elemzés', correct: false },
+			{ a: 'követelmény feltárás, követelmény validáció, követelmény specifikáció, megvalósíthatósági elemzés', correct: false },
+			{ a: 'követelmény feltárás, követelmény specifikáció, megvalósíthatósági elemzés, követelmény validáció', correct: false },
+		],
+	},
+	{
+		q: 'Milyen funkcionalitás olvasható ki az alábbi használati esetek diagramból?',
+		a: [
+			{ a: 'A felhasználónak lehetősége van új játékot kezdeni, de csak miután a beállításokat megadta.', correct: true },
+			{ a: 'A felhasználó a beállítások megadásával automatikusan új játékot indít.', correct: false },
+			{ a: 'A felhasználónak külön nem szükséges beállításokat megadni, vagy új játékot indítania, azonnal léphet a játékban.', correct: false },
+			{ a: 'A felhasználó csak akkor léphet ki a programból, ha elkezdett egy játékot.', correct: false },
+		],
+		img:'0.png',
+	},
+	{
+		q: 'Az alábbiak közül melyek az UML használati eset (use case) diagram relációi?',
+		a: [
+			{ a: 'függőség (dependency), kompozíció (composition), használat (usage), beágyazás (nesting)', correct: false },
+			{ a: 'előfeltétel (precedes), tartalmazás (include), használat (usage), általánosítás (generalization)', correct: true },
+			{ a: 'használat (usage), beágyazás (nesting), importálás (import), függőség (dependency)', correct: false },
+			{ a: 'felület (interface), megvalósítás (implementation), tartalmazás (include)', correct: false },
+		],
+	},
+	{
+		q: 'Mely objektumorientált elvet sérti az egyke (singleton) szerkezet, amely korábban egy népszerű tervminta volt? Az egyke szerkezet azt garantálja, hogy az objektumból csak egy példány legyen, amelyet egy statikus művelet segítségével kérhetünk el az osztálytól.',
+		a: [
+			{ a: 'Single Responsibility Principle', correct: false },
+			{ a: 'Open/Closed Principle', correct: false },
+			{ a: 'Dependency Inversion Principle', correct: true },
+			{ a: 'Liskov Substitution Principle', correct: false },
+		],
+	},
+	{
+		q: 'Az alábbiak közül melyik technika használható a Dependency Inversion Principle megvalósítására?',
+		a: [
+			{ a: '(figyelő) observer', correct: false },
+			{ a: 'függőség befecskendezés (dependency injection)', correct: true },
+			{ a: 'MVC (modell-view-controller)', correct: false },
+			{ a: 'általánosítás (generalization)', correct: false },
+		],
+	},
+	{
+		q: 'Mit jelent a tesztvezérelt fejlesztés (TDD)?',
+		a: [
+			{ a: 'Szoftverfejlesztési módszer, amelyben a teszteket a tényleges programkód elkészítése előtt írják meg.', correct: true },
+			{ a: 'Tesztelési módszer, amelynek célja, hogy az tesztesetek minden programegységre kiterjedjenek, és megfelelő sorrendben hajtódjanak végre.', correct: false },
+			{ a: 'Egy általános elv, amely kimondja, hogy a programkód minden utasítását ellenőrizni kell egységtesztek segítségével (100%-os kódlefedettség).', correct: false },
+			{ a: 'Tesztelési módszer, amelyben először egységteszteket készítenek az osztályokra (és metódusaikra), majd integrációs tesztekkel ellenőrzik az osztályok együttes viselkedését, végül rendszertesztekkel a teljes szoftvert viselkedését ellenőrzik.', correct: false },
+		],
+	},
+	{
+		q: 'Az alábbiak közül mely funkciót nem tudják biztosítani a teszt keretrendszerek (unit testing frameworks)?',
+		a: [
+			{ a: 'Tesztesetek manuális létrehozását külön programegységekben (osztályokban).', correct: false },
+			{ a: 'Mindent lefedő tesztesetek automatikus generálását a programkód elemzésével.', correct: true },
+			{ a: 'A kapott és elvárt eredmények összehasonlítását elvégző assert utasításokat.', correct: false },
+			{ a: 'Tesztjelentés elkészítését, amelyben látható, hogy mely tesztek lettek sikeresek/sikertelenek.', correct: false },
+		],
+	},
+	{
+		q: 'Egység (Unit) tesztelés esetén a program részeit el kell különítenünk egymástól és határokat kell felállítanunk közöttük. Erre az egyik lehetséges megoldás, hogy olyan objektumokat használunk, melyek más objektumok működését utánozzák. Hogyan nevezzük ezeket az objektumokat?',
+		a: [
+			{ a: 'Mock objektumoknak', correct: true },
+			{ a: 'Moduloknak', correct: false },
+			{ a: 'Egységeknek', correct: false },
+			{ a: 'Atomoknak', correct: false },
+		],
+	},
+	{
+		q: 'Miből indul ki az objektum orientált tervezés?',
+		a: [
+			{ a: 'Funkciók', correct: false },
+			{ a: 'Tevékenységek', correct: false },
+			{ a: 'Entitások és kapcsolataik', correct: true },
+			{ a: 'Architektúra', correct: false },
+		],
+	},
+	{
+		q: 'Mivel fejezzük ki, hogy egy objektum egy osztály több objektumával is kapcsolatban áll?',
+		a: [
+			{ a: 'Kompozícióval', correct: false },
+			{ a: 'Multiplicitással', correct: true },
+			{ a: 'Tömb típusú attribútummal', correct: false },
+			{ a: 'Aggregációval', correct: false },
+		],
+	},
+	{
+		q: 'Mihez rendelhetünk egy osztálydiagram esetén megszorítást?',
+		a: [
+			{ a: 'Reláció', correct: false },
+			{ a: 'Attribútum', correct: false },
+			{ a: 'Metódus paraméterek', correct: false },
+			{ a: 'Mindhez', correct: true },
+		],
+	},
+	{
+		q: 'Az alábbi relációk közül, melyik nem értelmezett osztályok objektumai között?',
+		a: [
+			{ a: 'Asszociáció', correct: false },
+			{ a: 'Függőség', correct: false },
+			{ a: 'Származtatás', correct: true },
+			{ a: 'Mindhez', correct: false },
+		],
+	},
+	{
+		q: 'Melyik diagram nem része a dinamikus modellnek?',
+		a: [
+			{ a: 'Állapot diagram', correct: false },
+			{ a: 'Szekvencia diagram', correct: false },
+			{ a: 'Tevékenyseg diagram', correct: false },
+			{ a: 'Komponens diagram', correct: true },
+		],
+	},
+	{
+		q: 'Mije nem lehet az állapotnak?',
+		a: [
+			{ a: 'Paramétere', correct: true },
+			{ a: 'Neve', correct: false },
+			{ a: 'Előfeltétele', correct: false },
+			{ a: 'Invariánsa', correct: false },
+		],
+	},
+	{
+		q: 'Mivel csökkenthető az állapotdiagram komplexitása?',
+		a: [
+			{ a: 'Általánosítás', correct: false },
+			{ a: 'Aggregáció', correct: false },
+			{ a: 'Általánosítással és aggregációval', correct: true },
+			{ a: 'Más módszerrel', correct: false },
+		],
+	},
+	{
+		q: 'Melyik igaz?',
+		a: [
+			{ a: 'Az általánosítás invariánsa az állapotok invariánsainak diszjunkciója', correct: true },
+			{ a: 'Az általánosítás invariánsa az állapotok invariánsainak konjunkciója', correct: false },
+			{ a: 'Az aggregáció invariánsa az állapotok invariánsainak diszjunkciója', correct: false },
+			{ a: 'A két módszerrel kapott állapotoknak nincs invariánsa', correct: false },
+		],
+	},
+	{
+		q: 'Melyik hamis?',
+		a: [
+			{ a: 'Az általánosítás során a létrejövő állapot invariánsát a részállapotok invariánsaiból képezzük', correct: false },
+			{ a: 'Az általánosítás invariánsa az állapotok invariánsainak diszjunkciója', correct: true },
+			{ a: 'Az aggregáció invariánsa az állapotok invariánsainak diszjunkciója', correct: false },
+			{ a: 'Az aggregáció invariánsa az állapotok invariánsainak konjunkciója', correct: false },
+		],
+	},
+	{
+		q: 'Melyik opcióban szereplő diagramok részei a statikus modellnek?',
+		a: [
+			{ a: 'Osztálydiagram, Objektumdiagram', correct: true },
+			{ a: 'Osztálydiagram, Állapotdiagram', correct: false },
+			{ a: 'Objektumdiagram, Szekvenciadiagram', correct: false },
+			{ a: 'Objektumdiagram, Aktivációs diagram', correct: false },
+		],
+	},
+	{
+		q: 'Mivel csökkenthető az állapotdiagram komplexitása?',
+		a: [
+			{ a: 'Az állapotok általánosításával.', correct: false },
+			{ a: 'Az állapotok aggregációjával.', correct: false },
+			{ a: 'Az állapotok általánosításával és/vagy aggregációjával.', correct: true },
+			{ a: 'Más módszerrel.', correct: false },
+		],
+	},
+	{
+		q: 'Az alábbi megvalósítás alapján melyik reláció áll fenn pontosan az autó (Car) és a motor (Engine) között?',
+		a: [
+			{ a: 'Általánosítás (Generalization)', correct: false },
+			{ a: 'Asszociáció (Association)', correct: false },
+			{ a: 'Aggregáció (Aggregation)', correct: true },
+			{ a: 'Kompozíció (Composition)', correct: false },
+		],
+		img: '1.png'
+	},
+	{
+		q: 'Az alábbi megvalósítás alapján melyik reláció áll fenn pontosan az autó (Car) és a motor (Engine) között?',
+		a: [
+			{ a: 'Általánosítás (Generalization)', correct: false },
+			{ a: 'Asszociáció (Association)', correct: false },
+			{ a: 'Aggregáció (Aggregation)', correct: false },
+			{ a: 'Kompozíció (Composition)', correct: true },
+		],
+		img: '2.png'
+	},
+	{
+		q: 'Milyen kapcsolat áll fenn az alábbi osztálydiagramon a Person és a Phone osztály között?',
+		a: [
+			{ a: 'Általánosítás (Generalization)', correct: false },
+			{ a: 'Asszociáció (Association)', correct: true },
+			{ a: 'Aggregáció (Aggregation)', correct: false },
+			{ a: 'Kompozíció (Composition)', correct: false },
+		],
+		img: '3.png'
+	},
+
+	//implementációs kérdések
+	{
+		q: 'Mit kell implementálni saját típus eseten a HashMap használatához?',
+		a: [
+			{ a: '== operátor', correct: false },
+			{ a: 'hashCode(…) metódus', correct: false },
+			{ a: 'equals(…) metódus', correct: false },
+			{ a: 'Mindkét metódust', correct: true },
+		],
+	},
+	{
+		q: 'Melyik megvalósítást válasszuk az alábbi opciók közül abban az esetben, ha főleg index alapú keresést szeretnénk alkalmazni egy dinamikusan változó méretű adathalmazon, ahol többször is előfordulhat ugyan az az elem? (Új elemet csak a gyűjtemény végére szeretnénk helyezni, törölni a gyűjteményből nem szeretnénk gyakran.) (kétes)',
+		a: [
+			{ a: 'ArrayList', correct: true },
+			{ a: 'LinkedList', correct: false },
+			{ a: 'Tömb (Array)', correct: false },
+			{ a: 'HashSet', correct: false },
+		],
+	},
+	{
+		q: 'Melyik megvalósítást válasszuk az alábbi opciók közül, ha olyan gyűjteményt szeretnénk a feladat során használni, mely nem duplikált elemeket tartalmaz és nincs szükségünk arra, hogy az elemeket a beszúrás sorrendjében vagy az értékek szerint növekvő sorrendben tároljuk?',
+		a: [
+			{ a: 'TreeSet', correct: false },
+			{ a: 'LinkedHashSet', correct: false },
+			{ a: 'HashSet', correct: true },
+			{ a: 'ArrayList', correct: false },
+		],
+	},
+	{
+		q: 'Az alábbi interfészek közül melyik implementációit használjuk kulcs-érték párok tárolására?',
+		a: [
+			{ a: 'List', correct: false },
+			{ a: 'Set', correct: false },
+			{ a: 'Map', correct: true },
+			{ a: 'Collection', correct: false },
+		],
+	},
+	{
+		q: 'Mely állítás igaz?',
+		a: [
+			{ a: 'final abstract osztálynak legalább egy metódusa abstract', correct: false },
+			{ a: 'abstract osztálynak legalább egy metódusa abstract', correct: false },
+			{ a: 'final osztály minden attribútuma final', correct: false },
+			{ a: 'abstract osztály leszármazottja is lehet abstract', correct: true },
+		],
+	},
+	{
+		q: 'Mely állítás nem igaz?',
+		a: [
+			{ a: 'final osztály nem származtatható', correct: false },
+			{ a: 'interface-ek nem származtathatók egymásból', correct: false },
+			{ a: 'Map', correct: true },
+			{ a: 'Collection', correct: false },
+		],
+	},
+	{
+		q: 'Mely állítások hamisak?',
+		a: [
+			{ a: 'final abstract osztálynak legalább egy metódusa abstract', correct: true },
+			{ a: 'abstract osztálynak legalább egy metódusa abstract', correct: true },
+			{ a: 'final osztály minden attribútuma final', correct: true },
+			{ a: 'abstract osztály leszármazottja is lehet abstract', correct: false },
+		],
+		multiply: true
+	},
+	{
+		q: 'Mely állítások igazak?',
+		a: [
+			{ a: 'final osztály nem származtatható', correct: true },
+			{ a: 'interface-ek nem származtathatók egymásból', correct: true },
+			{ a: 'Map', correct: false },
+			{ a: 'Collection', correct: true },
+		],
+		multiply: true
+	},
+	{
+		q: 'Mi lehet generikus paraméter? (kétes)',
+		a: [
+			{ a: 'Alaptípus', correct: false },
+			{ a: 'Osztály', correct: true },
+			{ a: 'interface', correct: false },
+			{ a: 'ArrayList', correct: false },
+		],
+	},
+	{
+		q: 'Mely gyűjtemény indexelhető?',
+		a: [
+			{ a: 'HashSet', correct: false },
+			{ a: 'HashMap', correct: false },
+			{ a: 'Vector', correct: true },
+			{ a: 'TreeMap', correct: false },
+		],
+	},
+	{
+		q: 'Mi lehet statikus? (kétes)',
+		a: [
+			{ a: 'Adattag', correct: true },
+			{ a: 'Metódus', correct: true },
+			{ a: 'Osztály / interface', correct: true },
+			{ a: 'Felsorolási típus', correct: true },
+		],
+	},
+	{
+		q: 'Mit támogat a Java a többszörös specializáció és többszörös általánosítás közül?',
+		a: [
+			{ a: 'Általanosítás', correct: false },
+			{ a: 'Specializáció', correct: true },
+			{ a: 'Mindkettő', correct: false },
+			{ a: 'Egyik sem', correct: false },
+		],
+	},
+
+	//módszertanok és modellek
+	{
+		q: 'Melyik nem agilis elv a következők közül?',
+		a: [
+			{ a: 'a módszertan érvényesítése, szemben az eszközökkel', correct: true },
+			{ a: 'a működő szoftver, szemben az átfogó dokumentációval', correct: false },
+			{ a: 'együttműködés az ügyféllel, szemben a szerződéses tárgyalásokkal', correct: false },
+			{ a: 'a változásra való reagálás, szemben a terv követésével.', correct: false },
+		],
+	},
+	{
+		q: 'Melyik állítás nem igaz a futam kapcsán?',
+		a: [
+			{ a: 'A terméknek mind a tervezése, kódolása és tesztelése is a futamon belül történik.', correct: false },
+			{ a: 'A futam eredménye üzleti értéket képviselő működő kód.', correct: false },
+			{ a: 'A feladatok és az idők meghatározása után csak a termékgazda szól bele a csapat munkájába.', correct: true },
+			{ a: 'A Scrum csapat önszerveződő módon dolgozik a futam során.', correct: false },
+		],
+	},
+	{
+		q: 'Melyik állítás igaz a Scrum mesterre?',
+		a: [
+			{ a: 'A Scrum mester a Scrum csapat menedzsere', correct: false },
+			{ a: 'A Scrum mester vezeti a napi Scrumot', correct: false },
+			{ a: 'A Scrum mester nem felel azért, hogy külső hatásoktól védje a Scrum csapat munkáját', correct: false },
+			{ a: 'A Scrum mester a folyamatokért felel', correct: true },
+		],
+	},
+	{
+		q: 'Melyik állítás igaz a napi Scrum-ra?',
+		a: [
+			{ a: 'A napi Scrum-ot a Scrum mester vezeti.', correct: false },
+			{ a: 'A napi Scrum során a csapattagok beszámolnak a Scrum mesternek a haladásukról.', correct: false },
+			{ a: 'A napi Scrum során az a cél, hogy felszámoljuk a csapatot érintő akadályokat.', correct: false },
+			{ a: 'A napi Scrum maximum 15 percet tarthat.', correct: true },
+		],
+	},
+	{
+		q: 'A három Scrum termék a következő: (kétes)',
+		a: [
+			{ a: 'termék kívánságlista, futam feladatlista, Scrum tábla', correct: false },
+			{ a: 'termékvízió, termék kívánságlista, felhasználói történet', correct: false },
+			{ a: 'termék kívánságlista, Scrum tábla, haladási diagram', correct: true },
+			{ a: 'termék kívánságlista, futam feladatlista, inkrementum', correct: false },
+		],
+	},
+	{
+		q: 'A Test-driven development (TDD) egy szoftverfejlesztési módszertan, mely szerint …',
+		a: [
+			{ a: 'a teszteket a tényleges programkód implementálása előtt kell elkészíteni.', correct: true },
+			{ a: 'a teszteket a tényleges programkód implementálása után kell elkészíteni minden egységre.', correct: false },
+			{ a: 'a tesztelő kolléga jóváhagyása után lehet új programkódot implementálni.', correct: false },
+			{ a: 'a tesztjegyzőkönyvet egy nappal az új programkód implementálása előtt kell a dokumentációhoz rendelni.', correct: false },
+		],
+	},
+
+	//verziókezelés
+	{
+		q: 'Mi a célja a folyamatos integrációs (continuous integration, CI) gyakorlati módszernek?',
+		a: [
+			{ a: 'A lehetséges hibák, integrációs problémák azonnali, automatizált kiszűrése, visszajelzés a fejlesztőnek. (Önellenőrző build)', correct: true },
+			{ a: 'Az elbukott integrációstesztek automatikus újra futtatása, ameddig meg nem javulnak.', correct: false },
+			{ a: 'Objektum orientált programozási nyelvre való átállást segíti elő.', correct: false },
+			{ a: 'A manuális tesztelés teljes kiváltása.', correct: false },
+		],
+	},
+	{
+		q: 'Mik a centralizált verziókövető rendszerek (Például: SVN, Perforce, CVS) hátrányai?',
+		a: [
+			{ a: 'A szerver kitüntetett szerepe. (Meghibásodás esetén használhatatlanná válik a rendszer a szerver javításáig.), Továbbá a verziókezeléshez hálózati kapcsolat szükséges.', correct: true },
+			{ a: 'Fájl alapú műveletvégzés (1 verzió 1 fájl változásai)', correct: false },
+			{ a: 'Lokális tároló', correct: false },
+			{ a: 'Konkurenciakezelés kizárólagos zárak által történik.', correct: false },
+		],
+	},
+	{
+		q: 'Melyik állítás nem igaz az elosztott verziókövető rendszerekre (Például: Git, Mercurial)?',
+		a: [
+			{ a: 'Decentralizált, elosztott hálózati modellt használnak, ahol a konkurenciakezelés jellemzően a beküldés utáni egyesítéssel történik.', correct: false },
+			{ a: 'Minden kliens rendelkezik a teljes tárolóval és verziótörténettel. A revíziókezelő eszköz műveletei lokálisan, a kliens tárolóján történnek.', correct: false },
+			{ a: 'A kommunikáció peer-to-peer elven történik, de kitüntetett szerverek felállítására is van lehetőség.', correct: false },
+			{ a: 'Fájlhalmaz alapú műveletvégzés jellemző rá, ahol a konkurenciakezelés jellemzően a beküldés előtti egyesítéssel történik.', correct: true },
+		],
+	},
+	{
+		q: 'Igaz-e, hogy Git merge esetén nem lehet konfliktus?',
+		a: [
+			{ a: 'Igaz, mivel csak rebase esetén alakulhat ki konfliktus.', correct: false },
+			{ a: 'Hamis, mivel minden merge esetén van konfliktus a kollégák között.', correct: false },
+			{ a: 'Igaz, mivel minden merge egyben egy újabb commit is.', correct: false },
+			{ a: 'Hamis, mivel előfordulhat, hogy a git nem tudja megoldani a változások automatikus integrálását. (Például: Két különböző commit egy fájl ugyanazon sorára vonatkozóan tárol módosítást.)', correct: true },
+		],
+	},
+	{
+		q: 'Az alábbiak közül, melyek az ismertebb build eszközök?',
+		a: [
+			{ a: 'Ant, Maven, Gradle', correct: true },
+			{ a: 'Ant, Git, Subversion (SVN)', correct: false },
+			{ a: 'Ant, Maven, Subversion (SVN)', correct: false },
+			{ a: 'Maven, Gradle, Git', correct: false },
+		],
+	},
+
+	//tervezési minták/tervminták
+	{
+		q: 'Mit mond ki a DRY elv?',
+		a: [
+			{ a: 'Ne implementáljunk előre olyan kódot, ami „majd a jövőben kelleni fog”, mert szinte biztos, hogy sose lesz rá szükségünk.', correct: false },
+			{ a: 'A tökéletességet nem akkor lehet a legjobban megközelíteni, ha egy rendszerhez nem tudunk már semmit hozzáadni, hanem akkor, ha nem tudunk mit elvenni belőle.', correct: false },
+			{ a: 'A tudás minden darabkájának egyetlen, egyértelmű és megbízható reprezentációval kell rendelkeznie egy rendszeren belül.', correct: true },
+			{ a: 'Az biztosan elmondható, hogy javulni fog a kódbázisunk minősége, ha mindig úgy hagyjuk ott az aktuális kódunkat, hogy az egy kicsit „jobb”, egy kicsit tisztább annál, mint ahogy megtaláltuk.', correct: false },
+		],
+	},
+	{
+		q: 'Melyik objektumorientált elvet szegtük meg az alábbi kódrészletben?',
+		a: [
+			{ a: 'Liskov Substitution Principle (Liskov-féle helyettesítési elv)', correct: true },
+			{ a: 'Dependency Inversion Principle (Függőség megfordítása elv)', correct: false },
+			{ a: 'KISS', correct: false },
+			{ a: 'DRY', correct: false },
+		],
+		img: '4.png'
+	},
+	{
+		q: 'Melyik nem SOLID alapelv az alábbiak közül?',
+		a: [
+			{ a: 'Liskov Substitution Principle (Liskov-féle helyettesítési elv)', correct: false },
+			{ a: 'Open/Closed Principle (Nyílt/Zárt elv)', correct: false },
+			{ a: 'Single Responsibility Principle (Egy felelősség elve)', correct: false },
+			{ a: 'Separation of Concerns Principle (A vonatkozások szétválasztásának elve)', correct: true },
+		],
+	},
+	{
+		q: 'Melyik objektumorientált elvet szegtük meg az alábbi kódrészletben?',
+		a: [
+			{ a: 'Dependency Inversion Principle (Függőségek megfordításának elve)', correct: false },
+			{ a: 'Open/Closed Principle (Nyílt/Zárt elv)', correct: true },
+			{ a: 'Interface segregation Principle (Interface szétválasztási elv)', correct: false },
+			{ a: 'Liskov Substitution Principle (Liskov-féle helyettesítési elv)', correct: false },
+		],
+		img: '5.png'
+	},
+	{
+		q: 'Adott egy lámpa (Lamp) osztály. A lámpának van színe, illetve ki/be lehet kapcsolni. A lakásunkban a falon található egy kapcsoló (Switch) mely az alábbi módon lett implementálva. Mi lehet a probléma ezzel a megvalósítással?:',
+		a: [
+			{ a: 'A kapcsoló megsérti a Liskov Substitution Principle-t (Liskov-féle helyettesítési elv)', correct: false },
+			{ a: 'A kapcsoló megsérti az Open/Closed Principle-t (Nyílt/Zárt elv)', correct: false },
+			{ a: 'A kapcsoló magasabb absztrakciós szinten helyezkedik el, mint a lámpa, így megsérül a Dependency Inversion Principle (Függőségek megfordításának elve)', correct: true },
+			{ a: 'A kapcsoló megsérti a Single Responsibility Principle-t (Egy felelősség elve)', correct: false },
+		],
+		img: '6.png'
+	},
+	{
+		q: 'Melyik tervezési minta nyújt megoldást arra a problémára, ha több objektumot szeretnénk értesíteni, amikor egy másik objektumnak megváltozik az állapota.',
+		a: [
+			{ a: 'Singleton (Egyke)', correct: false },
+			{ a: 'Observer (Megfigyelő)', correct: true },
+			{ a: 'Adapter (Illesztő)', correct: false },
+			{ a: 'Factory (Gyártó)', correct: false },
+		],
+	},
+	{
+		q: 'Melyik tervezési minta alkalmazható a hosszú paraméterlistájú konstruktorok elkerülésére?',
+		a: [
+			{ a: 'Observer (Megfigyelő)', correct: false },
+			{ a: 'Factory (Gyártó)', correct: false },
+			{ a: 'Builder (Építő)', correct: true },
+			{ a: 'Command (Parancs)', correct: false },
+		],
+	},
+	{
+		q: 'Melyik tervezési minta megvalósításának része lehet az alábbi kódrészlet?',
+		a: [
+			{ a: 'Singleton (Egyke)', correct: false },
+			{ a: 'Builder (Építő)', correct: true },
+			{ a: 'Adapter (Illesztő)', correct: false },
+			{ a: 'Command (Parancs)', correct: false },
+		],
+		img: '7.png'
+	},
+	{
+		q: 'Melyik tervezési mintát alkalmazhatjuk abban az esetben, ha konkrét osztály megadása nélkül szeretnénk kapcsolódó vagy egymástól függő objektumok családjának létrehozására felületet biztosítani?',
+		a: [
+			{ a: 'Factory method (Gyártó függvény)', correct: false },
+			{ a: 'Adapter (Illesztő)', correct: false },
+			{ a: 'Builder (Építő)', correct: false },
+			{ a: 'Abstract Factory (Absztrakt gyár)', correct: true },
+		],
+	},
+	{
+		q: 'Melyik tervezési mintát alkalmazhatjuk abban az eesetben, ha egy adott osztály példányosítását szeretnénk a hozzátartozó alosztályokra átruházni?',
+		a: [
+			{ a: 'Factory method (Gyártó)', correct: true },
+			{ a: 'Command (Parancs)', correct: false },
+			{ a: 'Builder (Építő)', correct: false },
+			{ a: 'Observer (Megfigyelő)', correct: false },
+		],
+	},
+	{
+		q: 'Melyik tervezési mintát valósítja meg az alábbi kódrészlet?',
+		a: [
+			{ a: 'Singleton (Egyke)', correct: true },
+			{ a: 'Factory (Gyártó)', correct: false },
+			{ a: 'Builder (Építő)', correct: false },
+			{ a: 'Adapter (Illesztő)', correct: false },
+		],
+		img: '8.png'
+	},
+	{
+		q: 'Melyik tervezési mintát valósítja meg az alábbi kódrészlet?',
+		a: [
+			{ a: 'Factory method (Gyártó)', correct: false },
+			{ a: 'Command (Parancs)', correct: false },
+			{ a: 'Adapter (Illesztő)', correct: false },
+			{ a: 'Abstract Factory (Absztrakt gyár)', correct: true },
+		],
+		img: '9.png'
 	},
 ];

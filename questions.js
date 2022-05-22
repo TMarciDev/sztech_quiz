@@ -1466,6 +1466,7 @@ const questions3 = [
 			},
 			{ a: 'Futtatáskor exception-t eredményez', correct: false },
 		],
+		img: '10.png',
 	},
 
 	//adatbázis/jdbc
@@ -1565,9 +1566,9 @@ const questions3 = [
 		q: 'Mire való a tranzakció az adatbázisoknál?',
 		a: [
 			{ a: 'Tárolt eljárások futtatására', correct: false },
-			{ a: 'Több művelet atomikénti végrehajtására', correct: false },
+			{ a: 'Több művelet atomikénti végrehajtására', correct: true },
 			{ a: 'Kapcsolt táblás lekérdezésre', correct: false },
-			{ a: 'Átutalások elnevezésére', correct: true },
+			{ a: 'Átutalások elnevezésére', correct: false },
 		],
 	},
 	{
@@ -1820,6 +1821,16 @@ const questions3 = [
 		],
 	},
 	{
+		q: 'Melyik diagramok részei a dinamikus modellnek?',
+		a: [
+			{ a: 'Állapot diagram', correct: true },
+			{ a: 'Telepítési diagram', correct: false },
+			{ a: 'Tevékenyseg diagram', correct: true },
+			{ a: 'Komponens diagram', correct: false },
+		],
+		multiply: true,
+	},
+	{
 		q: 'Mije nem lehet az állapotnak?',
 		a: [
 			{ a: 'Paramétere', correct: true },
@@ -1987,9 +1998,12 @@ const questions3 = [
 		q: 'Mely állítás nem igaz?',
 		a: [
 			{ a: 'final osztály nem származtatható', correct: false },
-			{ a: 'interface-ek nem származtathatók egymásból', correct: false },
-			{ a: 'Map', correct: true },
-			{ a: 'Collection', correct: false },
+			{ a: 'interface-ek nem származtathatók egymásból', correct: true },
+			{ a: 'Egy osztály több interface-t is megvalósíthat', correct: false },
+			{
+				a: 'Az interface minden metódusát meg kell valósítani',
+				correct: false,
+			},
 		],
 	},
 	{
@@ -2012,22 +2026,15 @@ const questions3 = [
 		multiply: true,
 	},
 	{
-		q: 'Mely állítások igazak?',
-		a: [
-			{ a: 'final osztály nem származtatható', correct: true },
-			{ a: 'interface-ek nem származtathatók egymásból', correct: true },
-			{ a: 'Map', correct: false },
-			{ a: 'Collection', correct: true },
-		],
-		multiply: true,
-	},
-	{
 		q: 'Mi lehet generikus paraméter? (kétes)',
 		a: [
 			{ a: 'Alaptípus', correct: false },
 			{ a: 'Osztály', correct: true },
 			{ a: 'interface', correct: false },
-			{ a: 'ArrayList', correct: false },
+			{
+				a: 'Osztály, ami megvalósítja a generikusban használt műveleteket ',
+				correct: false,
+			},
 		],
 	},
 	{
@@ -2047,6 +2054,7 @@ const questions3 = [
 			{ a: 'Osztály / interface', correct: true },
 			{ a: 'Felsorolási típus', correct: true },
 		],
+		multiply: true,
 	},
 	{
 		q: 'Mit támogat a Java a többszörös specializáció és többszörös általánosítás közül?',
@@ -2129,7 +2137,7 @@ const questions3 = [
 		],
 	},
 	{
-		q: 'A három Scrum termék a következő: (kétes)',
+		q: 'A három Scrum termék a következő:',
 		a: [
 			{
 				a: 'termék kívánságlista, futam feladatlista, Scrum tábla',
@@ -2141,11 +2149,11 @@ const questions3 = [
 			},
 			{
 				a: 'termék kívánságlista, Scrum tábla, haladási diagram',
-				correct: true,
+				correct: false,
 			},
 			{
 				a: 'termék kívánságlista, futam feladatlista, inkrementum',
-				correct: false,
+				correct: true,
 			},
 		],
 	},

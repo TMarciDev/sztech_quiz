@@ -6,6 +6,8 @@ const labels = document.querySelectorAll('.label');
 const checkButton = document.querySelector('.check');
 const points = document.querySelector('.points');
 const selector = document.querySelector('.quiz-selector');
+const qImage = document.querySelector('.q-image');
+const rImage = document.querySelector('.r-image');
 
 var currentQ;
 
@@ -13,7 +15,6 @@ var correct = 0;
 var all = 0;
 
 var questions = questions1;
-questionContainer.classList.add('invisible');
 
 selector.addEventListener('change', (e) => {
 	switch (e.target.value) {
@@ -62,6 +63,9 @@ checkButton.addEventListener('click', () => {
 		const q = questions[currentQ];
 		++all;
 
+		var corrects = 0;
+		var myCorrects = 0;
+
 		q.a.map((a, i) => {
 			const label = labels[i];
 			const isChecked = radios[i].checked;
@@ -70,22 +74,30 @@ checkButton.addEventListener('click', () => {
 			if (isCorrect) {
 				label.style.color = 'green';
 				label.style.textDecoration = 'underLine';
+				corrects++;
 				if (isChecked) {
-					++correct;
+					++myCorrects;
 				}
 			} else if (!isCorrect && isChecked) {
 				label.style.color = 'red';
 				label.style.textDecoration = 'underLine';
+				myCorrects = 0;
+				corrects = 10;
 			}
-			points.innerText =
-				all + '/' + correct + ' correct\n' + (questions.length - all) + ' left';
 		});
+		if (myCorrects === corrects) {
+			correct++;
+		}
+		points.innerText =
+			all + '/' + correct + ' correct\n' + (questions.length - all) + ' left';
 		saw = true;
 		checkButton.innerText = 'Next';
 	} else {
 		if (all >= questions.length) {
 			checkButton.innerText = 'Finished';
 			checkButton.disabled = true;
+			rImage.classList.remove('invisible');
+			loadImg();
 		} else {
 			checkButton.innerText = 'Check';
 			saw = false;
@@ -100,6 +112,16 @@ const newQuestion = () => {
 	questionField.innerText = q.q;
 	length = q.a.length;
 
+	if (q.hasOwnProperty('img')) {
+		qImage.classList.remove('invisible');
+		qImage.src = 'images/' + q.img;
+	} else {
+		qImage.classList.add('invisible');
+	}
+
+	[...radios].map((r) => {
+		r.type = q.hasOwnProperty('multiply') ? 'checkbox' : 'radio';
+	});
 	[...labels].map((l, i) => {
 		radios[i].checked = false;
 		radios[i].disabled = false;
@@ -121,6 +143,7 @@ const newQuestion = () => {
 		radios[2].style.visibility = 'visible';
 		labels[2].style.visibility = 'visible';
 	}
+	rImage.classList.add('invisible');
 };
 
 function shuffle(array) {
@@ -141,4 +164,13 @@ function shuffle(array) {
 	}
 
 	return array;
+}
+
+function loadImg() {
+	const xhttp = new XMLHttpRequest();
+	xhttp.onload = function () {
+		rImage.src = JSON.parse(this.responseText).image;
+	};
+	xhttp.open('GET', 'https://some-random-api.ml/meme', true);
+	xhttp.send();
 }

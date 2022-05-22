@@ -16,6 +16,15 @@ body {
     body {
       margin: 20px
     }
+
+    .q-image {
+        height: auto;
+        width: 80vw;
+    }
+    .q-image:hover {
+        transform: scale(130%);
+        transition: linear 0.1s;
+    }
   }
 
 .start-container {
@@ -27,11 +36,15 @@ body {
     margin: 20px 0px 20px 0px;
 }
 
+.check {
+    width: 100px;
+}
+
 .questions-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
+    min-height: 400px;
 }
 
 .controls{
@@ -44,4 +57,18 @@ body {
 
 .opt {
     margin-top: 10px;;
+}
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.q-image {
+    height: 200px;
+    object-fit: contain;
+}
+
+.q-image:hover {
+    transform: scale(190%);
+    transition: linear 0.1s;
 }

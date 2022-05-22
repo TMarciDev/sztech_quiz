@@ -1723,9 +1723,9 @@ const questions3 = [
 		q: 'Melyik hamis?',
 		a: [
 			{ a: 'Az általánosítás során a létrejövő állapot invariánsát a részállapotok invariánsaiból képezzük', correct: false },
-			{ a: 'Az általánosítás invariánsa az állapotok invariánsainak diszjunkciója', correct: true },
+			{ a: 'Az általánosítás invariánsa az állapotok invariánsainak diszjunkciója', correct: false },
 			{ a: 'Az aggregáció invariánsa az állapotok invariánsainak diszjunkciója', correct: false },
-			{ a: 'Az aggregáció invariánsa az állapotok invariánsainak konjunkciója', correct: false },
+			{ a: 'Az általánosítás invariánsa az állapotok invariánsainak konjunkciója', correct: true },
 		],
 	},
 	{
@@ -2070,7 +2070,7 @@ const questions3 = [
 		],
 	},
 	{
-		q: 'Melyik tervezési mintát alkalmazhatjuk abban az eesetben, ha egy adott osztály példányosítását szeretnénk a hozzátartozó alosztályokra átruházni?',
+		q: 'Melyik tervezési mintát alkalmazhatjuk abban az esetben, ha egy adott osztály példányosítását szeretnénk a hozzátartozó alosztályokra átruházni?',
 		a: [
 			{ a: 'Factory method (Gyártó)', correct: true },
 			{ a: 'Command (Parancs)', correct: false },

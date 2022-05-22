@@ -167,10 +167,6 @@ function shuffle(array) {
 }
 
 function loadImg() {
-	const xhttp = new XMLHttpRequest();
-	xhttp.onload = function () {
-		rImage.src = JSON.parse(this.responseText).image;
-	};
-	xhttp.open('GET', 'https://some-random-api.ml/meme', true);
-	xhttp.send();
+	rImage.src = 'dank/' + dank[Math.floor(Math.random() * dank.length)];
+	console.log(rImage.src);
 }

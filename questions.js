@@ -1872,29 +1872,22 @@ const questions3 = [
 	{
 		q: 'Melyik hamis?',
 		a: [
-<<<<<<< HEAD
-			{ a: 'Az általánosítás során a létrejövő állapot invariánsát a részállapotok invariánsaiból képezzük', correct: false },
-			{ a: 'Az általánosítás invariánsa az állapotok invariánsainak diszjunkciója', correct: false },
-			{ a: 'Az aggregáció invariánsa az állapotok invariánsainak diszjunkciója', correct: false },
-			{ a: 'Az általánosítás invariánsa az állapotok invariánsainak konjunkciója', correct: true },
-=======
 			{
 				a: 'Az általánosítás során a létrejövő állapot invariánsát a részállapotok invariánsaiból képezzük',
 				correct: false,
 			},
 			{
 				a: 'Az általánosítás invariánsa az állapotok invariánsainak diszjunkciója',
-				correct: true,
+				correct: false,
 			},
 			{
 				a: 'Az aggregáció invariánsa az állapotok invariánsainak diszjunkciója',
 				correct: false,
 			},
 			{
-				a: 'Az aggregáció invariánsa az állapotok invariánsainak konjunkciója',
-				correct: false,
+				a: 'Az általánosítás invariánsa az állapotok invariánsainak konjunkciója',
+				correct: true,
 			},
->>>>>>> d3e65024f32ef6c0d7a66640f67ce99ebb3d8de6
 		],
 	},
 	{

@@ -49,6 +49,7 @@ body {
 
 .controls{
     display: flex;
+    position: relative;
 }
 
 .points {
@@ -71,4 +72,9 @@ body {
 .q-image:hover {
     transform: scale(190%);
     transition: linear 0.1s;
+}
+
+.repeat-container { 
+    position: absolute;
+    right: 0;
 }

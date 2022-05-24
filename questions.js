@@ -1684,11 +1684,11 @@ const questions3 = [
 		a: [
 			{
 				a: 'A felhasználónak lehetősége van új játékot kezdeni, de csak miután a beállításokat megadta.',
-				correct: true,
+				correct: false,
 			},
 			{
 				a: 'A felhasználó a beállítások megadásával automatikusan új játékot indít.',
-				correct: false,
+				correct: true,
 			},
 			{
 				a: 'A felhasználónak külön nem szükséges beállításokat megadni, vagy új játékot indítania, azonnal léphet a játékban.',

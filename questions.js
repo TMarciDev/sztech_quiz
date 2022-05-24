@@ -1468,6 +1468,22 @@ const questions3 = [
 		],
 		img: '10.png',
 	},
+	{
+		q: 'Melyik output nem lehetséges a következő kód futtatása esetén?',
+		a: [
+			{
+				a: '0 0 0 0 0',
+				correct: false,
+			},
+			{ a: '10 0 0 0 0', correct: false },
+			{
+				a: '0 10 10 10 10',
+				correct: true,
+			},
+			{ a: '10 10 10 10 1', correct: false },
+		],
+		img: '11.png',
+	},
 
 	//adatbázis/jdbc
 	{

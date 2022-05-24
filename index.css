@@ -29,7 +29,14 @@ body {
 
 .start-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.flex1 {
+    flex: 1;
+}
+.start-container button {
+    margin-right: 10px
 }
 
 .spaced {
@@ -49,6 +56,7 @@ body {
 
 .controls{
     display: flex;
+    position: relative;
 }
 
 .points {
@@ -71,4 +79,9 @@ body {
 .q-image:hover {
     transform: scale(190%);
     transition: linear 0.1s;
+}
+
+.repeat-container { 
+    position: absolute;
+    right: 0;
 }

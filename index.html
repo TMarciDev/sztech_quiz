@@ -16,8 +16,8 @@
 	<body>
 		<div class="quiz-container">
 			<div class="start-container">
-				<button class="start btn btn-primary spaced">New quiz</button>
-				<select class="quiz-selector form-select">
+				<button class="start btn btn-primary flex1">New quiz</button>
+				<select class="quiz-selector form-select flex1">
 					<option value="1" selected>Szofttech canvas quizek</option>
 					<option value="3">Kapott kérdéssor eldöntendő kérdései</option>
 					<option value="2">Progtech canvas quizek</option>
@@ -74,6 +74,17 @@
 				<div class="controls">
 					<button class="check btn btn-primary spaced">Check</button>
 					<p class="points spaced">0/0</p>
+					<div class="repeat-container">
+						<label for="repeat" class="spaced">
+							<input
+								type="checkbox"
+								id="repeat"
+								class="repeat form-check-input"
+								checked
+							/>
+							add to end if fail
+						</label>
+					</div>
 				</div>
 			</div>
 			<img src="" class="r-image" />

@@ -8,26 +8,29 @@ const points = document.querySelector('.points');
 const selector = document.querySelector('.quiz-selector');
 const qImage = document.querySelector('.q-image');
 const rImage = document.querySelector('.r-image');
+const repeat = document.querySelector('.repeat');
 
 var currentQ;
 
 var correct = 0;
 var all = 0;
+var added = 0;
 
-var questions = questions1;
+var questions = [...questions1];
 
 selector.addEventListener('change', (e) => {
+	added = 0;
 	switch (e.target.value) {
 		case '1': {
-			questions = questions1;
+			questions = [...questions1];
 			break;
 		}
 		case '2': {
-			questions = questions2;
+			questions = [...questions2];
 			break;
 		}
 		default: {
-			questions = questions3;
+			questions = [...questions3];
 		}
 	}
 	startQuiz();
@@ -35,6 +38,11 @@ selector.addEventListener('change', (e) => {
 var saw = false;
 
 const startQuiz = () => {
+	if (added > 0) {
+		questions.splice(questions.length - added, added);
+		added = 0;
+	}
+
 	shuffle(questions);
 	questions.map((q) => {
 		shuffle(q.a);
@@ -87,6 +95,10 @@ checkButton.addEventListener('click', () => {
 		});
 		if (myCorrects === corrects) {
 			correct++;
+		} else if (repeat.checked) {
+			++added;
+			shuffle(q.a);
+			questions.push(q);
 		}
 		points.innerText =
 			all + '/' + correct + ' correct\n' + (questions.length - all) + ' left';

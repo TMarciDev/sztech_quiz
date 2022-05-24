@@ -1432,7 +1432,7 @@ const questions3 = [
 		],
 	},
 	{
-		q: 'Melyik állítás nem igaz az immutable osztályokra?',
+		q: 'Melyik állítás nem igaz az immutable osztályokra? (kétes)',
 		a: [
 			{
 				a: 'Az osztályt final-ként kell deklarálni a leszármaztatás megelőzése végett',
@@ -1704,6 +1704,15 @@ const questions3 = [
 				a: 'felület (interface), megvalósítás (implementation), tartalmazás (include)',
 				correct: false,
 			},
+		],
+	},
+	{
+		q: 'Mire szolgál az UML telepítési (deployment) diagram?',
+		a: [
+			{ a: 'Ábrázolja azt a műveletsorozatot, amely a szoftver adott gépen történő üzembehelyezéséhez szükséges.', correct: false },
+			{ a: 'Ábrázolja az összes hibalehetőséget, amellyel a telepítés során találkozhatunk.', correct: false },
+			{ a: 'Ábrázolja a szoftver összetevőket, annak megfelelően, miként kell őket telepítőcsomagba helyezni.', correct: false },
+			{ a: 'Ábrázolja a szoftver összetevőinek fizikai (különböző gépeken történő) elhelyezését, a szükséges szoftverkörnyezettel.', correct: true },
 		],
 	},
 	{
@@ -2431,10 +2440,10 @@ const questions3 = [
 	{
 		q: 'Melyik tervezési mintát valósítja meg az alábbi kódrészlet?',
 		a: [
-			{ a: 'Factory method (Gyártó)', correct: false },
+			{ a: 'Factory method (Gyártó)', correct: true },
 			{ a: 'Command (Parancs)', correct: false },
 			{ a: 'Adapter (Illesztő)', correct: false },
-			{ a: 'Abstract Factory (Absztrakt gyár)', correct: true },
+			{ a: 'Abstract Factory (Absztrakt gyár)', correct: false },
 		],
 		img: '9.png',
 	},

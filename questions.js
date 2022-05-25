@@ -1462,9 +1462,9 @@ const questions3 = [
 			{ a: 'Az osztály szálbiztos', correct: false },
 			{
 				a: 'A foo metódus statikussá tétele szálbiztossá tenné az oszályt',
-				correct: true,
+				correct: false,
 			},
-			{ a: 'Futtatáskor exception-t eredményez', correct: false },
+			{ a: 'Futtatáskor exception-t eredményez', correct: true },
 		],
 		img: '10.png',
 	},
@@ -1833,7 +1833,7 @@ const questions3 = [
 			{ a: 'Asszociáció', correct: false },
 			{ a: 'Függőség', correct: false },
 			{ a: 'Származtatás', correct: true },
-			{ a: 'Mindhez', correct: false },
+			{ a: 'Aggregáció', correct: false },
 		],
 	},
 	{

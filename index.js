@@ -29,6 +29,10 @@ selector.addEventListener('change', (e) => {
 			questions = [...questions2];
 			break;
 		}
+		case '4': {
+			questions = [...questions1, ...questions2, ...questions3];
+			break;
+		}
 		default: {
 			questions = [...questions3];
 		}

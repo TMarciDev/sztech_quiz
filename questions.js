@@ -4,7 +4,7 @@ const python = [
 		a: [{ a: "256", correct: true }],
 	  },
 	  {
-		q: "What is the output?<br />var = 2var = 3print(var)",
+		q: "What is the output?<br />var = 2<br />var = 3<br />print(var)",
 		a: [
 		  { a: "2", correct: false },
 		  { a: "Error", correct: false },
@@ -20,7 +20,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "This code has no error. x= input('Enter a number')y= x+1print (y)",
+		q: "This code has no error. x= input('Enter a number')<br />y= x+1<br />print (y)",
 		a: [
 		  { a: "True", correct: false },
 		  { a: "False", correct: false },
@@ -34,7 +34,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'This code has no error:# This is a multiline comment. # print("Hello!")',
+		q: 'This code has no error:# This is a multiline<br />comment. #<br />print("Hello!")',
 		a: [
 		  { a: "False", correct: false },
 		  { a: "True", correct: false },
@@ -61,7 +61,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "what is the output?<br />a = 6b = 3a /= 2 * bprint(a)",
+		q: "what is the output?<br />a = 6<br />b = 3<br />a /= 2 * b<br />print(a)",
 		a: [
 		  { a: "1", correct: false },
 		  { a: "9", correct: false },
@@ -79,7 +79,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "lst = [1, [7, 7], 4]print(lst[1])",
+		q: "lst = [1, [7, 7], 4]<br />print(lst[1])",
 		a: [
 		  { a: "Error", correct: false },
 		  { a: "1", correct: false },
@@ -88,7 +88,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'list_1 = ["A", "B", "C"]list_2 = list_1list_3 = list_2del list_1[0]del list_2[0]print(list_3)',
+		q: 'list_1 = ["A", "B", "C"]<br />list_2 = list_1<br />list_3 = list_2<br />del list_1[0]<br />del list_2[0]<br />print(list_3)',
 		a: [
 		  { a: "[ ]", correct: false },
 		  { a: "Error", correct: false },
@@ -97,7 +97,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "x = 1y = 0z = ((x == y) and (x == y)) or not(x == y)print(not(z))",
+		q: "x = 1<br />y = 0<br />z = ((x == y) and (x == y)) or not(x == y)<br />print(not(z))",
 		a: [
 		  { a: "True", correct: false },
 		  { a: "0", correct: false },
@@ -106,7 +106,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'How many star is printed?<br />i = 2while i >= 0:    print("*")    i -= 2',
+		q: 'How many star is printed?<br />i = 2<br />while i >= 0:<br />    print("*")<br />    i -= 2',
 		a: [
 		  { a: "one", correct: false },
 		  { a: "two", correct: false },
@@ -115,7 +115,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'What is the output?<br />hi()def hi():     print("hi!")',
+		q: 'What is the output?<br />hi()<br />def hi():<br />     print("hi!")',
 		a: [
 		  { a: "None", correct: false },
 		  { a: "Error", correct: false },
@@ -124,7 +124,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'a = "A"b = "B"c = "C"d = " "lst = [a, b, c, d]lst.reverse()print(lst)',
+		q: 'a = "A"<br />b = "B"<br />c = "C"<br />d = " "<br />lst = [a, b, c, d]<br />lst.reverse()<br />print(lst)',
 		a: [
 		  { a: "['A', 'B', 'C', '']", correct: false },
 		  { a: "Error", correct: false },
@@ -133,7 +133,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "What is the output?<br />for i in range (-1,1):     print ('%')",
+		q: "What is the output?<br />for i in range (-1,1):<br />     print ('%')",
 		a: [
 		  { a: "out of range", correct: false },
 		  { a: "%", correct: false },
@@ -142,7 +142,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "what is the output?<br />m_l = [3,1,-1]m_l[-1] = m_l[-2]print (m_l)",
+		q: "what is the output?<br />m_l = [3,1,-1]<br />m_l[-1] = m_l[-2]<br />print (m_l)",
 		a: [
 		  { a: "[3,-1,-1]", correct: false },
 		  { a: "[3,1,1]", correct: false },
@@ -151,7 +151,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'def hi():     return     print("Hi!")hi()',
+		q: 'def hi():<br />     return<br />     print("Hi!")<br />hi()',
 		a: [
 		  { a: "Error", correct: false },
 		  { a: "hi!", correct: false },
@@ -160,7 +160,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "You want to invoke the function make_money() contained in the module named mint. Your code begins with the following line:from mint import make_money What is the proper form of the function's invocation?",
+		q: "You want to invoke the function make_money() contained in the module named mint. Your code begins with the following line:<br />from mint import make_money <br />What is the proper form of the function's invocation?",
 		a: [
 		  { a: "All the above", correct: false },
 		  { a: "make_money", correct: false },
@@ -173,7 +173,7 @@ const python = [
 		a: [{ a: "from math import pi as PI", correct: true }],
 	  },
 	  {
-		q: "What is the expected output of the following code?<br />the_list = ['Where', 'are', 'the', 'snows?']s = '*'.join(the_list)print(s)",
+		q: "What is the expected output of the following code?<br />the_list = ['Where', 'are', 'the', 'snows?']<br />s = '*'.join(the_list)<br />print(s)",
 		a: [
 		  { a: "Where*are*the*snows?", correct: false },
 		  { a: "Error, it is immutable", correct: false },
@@ -231,7 +231,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "You want to invoke the function make_money() contained in the module named mint. Your code begins with the following line:import mint What is the proper form of the function's invocation?",
+		q: "You want to invoke the function make_money() contained in the module named mint. Your code begins with the following line:<br />import mint<br /> What is the proper form of the function's invocation?",
 		a: [
 		  { a: "mint.make_money()", correct: false },
 		  { a: "mint.make_money", correct: false },
@@ -240,7 +240,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'What is the output of the following snippet?<br />from datetime import timet = time(14, 39)print(t.strftime("%H:%M:%S"))',
+		q: 'What is the output of the following snippet?<br />from datetime import time<br />t = time(14, 39)<br />print(t.strftime("%H:%M:%S"))',
 		a: [
 		  { a: "14:39", correct: false },
 		  { a: "Error", correct: false },
@@ -265,7 +265,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "What is the output of the following snippet?<br />from datetime import dateimport timetimestamp = time.time()d = date.fromtimestamp(timestamp)print(d)",
+		q: "What is the output of the following snippet?<br />from datetime import date<br />import time<br />timestamp = time.time()<br />d = date.fromtimestamp(timestamp)<br />print(d)",
 		a: [
 		  { a: "2023-04-03 15:00", correct: false },
 		  { a: "20230403.03042023", correct: false },
@@ -274,7 +274,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "What is the problem with this program ?<br /> If there is !from datetime import timedeltafrom datetime import datefrom dateTime import datetimedelta = timedelta(weeks=2, days=2, hours=2)print(delta)delta2 = delta * 2print(delta2)d = date(2019, 10, 4) + delta2print(d)dt = datetime(2019, 10, 4, 14, 53) + delta2print(dt)",
+		q: "What is the problem with this program ?<br /> If there is !from datetime import timedelta<br />from datetime import date<br />from dateTime import datetime<br /><br />delta = timedelta(weeks=2, days=2, hours=2)<br />print(delta)<br /><br />delta2 = delta * 2<br />print(delta2)<br /><br />d = date(2019, 10, 4) + delta2<br />print(d)<br /><br />dt = datetime(2019, 10, 4, 14, 53) + delta2<br />print(dt)",
 		a: [
 		  { a: "No problem found, it is working", correct: false },
 		  { a: "we should write from datetime import *", correct: false },
@@ -283,7 +283,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'What is the output of the following snippet?<br />from datetime import datetimedt = datetime(2023, 4, 3, 15, 10)print(dt.strftime("%y/%m/%d-%H:%M:%S"))',
+		q: 'What is the output of the following snippet?<br />from datetime import datetime<br />dt = datetime(2023, 4, 3, 15, 10)<br />print(dt.strftime("%y/%m/%d-%H:%M:%S"))',
 		a: [
 		  { a: "23/04/03-15:10:10", correct: false },
 		  { a: "23/04/03-15:00:10", correct: false },
@@ -292,7 +292,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "What is the output of the following snippet?<br />from datetime import datetoday = date.today()print(today)",
+		q: "What is the output of the following snippet?<br />from datetime import date<br />today = date.today()<br />print(today)",
 		a: [
 		  { a: "2023%04%03", correct: false },
 		  { a: "2023_04_03", correct: false },
@@ -317,7 +317,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "process for collecting data from avariety of sources, transformingthe data, and then loading thedata into a database",
+		q: "process for collecting data from a variety of sources, transforming the data, and then loading thedata into a database",
 		a: [
 		  { a: "import data using pandas", correct: false },
 		  { a: "ETL", correct: false },
@@ -371,7 +371,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "I want to get the year from this format into a new column named, Year. Choose the correct answerdataframe name: dfcolumn name: Dateformat: 08/31/2014",
+		q: "I want to get the year from this format into a new column named, Year. Choose the correct answer<br />dataframe name: df<br />column name: Date<br />format: 08/31/2014",
 		a: [
 		  { a: "df['Year'] = df['Date'][5:10]", correct: false },
 		  {
@@ -398,29 +398,31 @@ const python = [
 		],
 	  },
 	  {
-		q: "Which method would you use to view table statistics?<br /> for a data frame called Data?weightcount10000.000000mean20.499212std0.199874min19.75200025%20.36500050%20.50000075%20.635000max21.171000",
+		q: "Which method would you use to view table statistics?<br /> for a data frame called Data?",
 		a: [
 		  { a: "Data.head()", correct: false },
 		  { a: "Data.describe()", correct: false },
 		  { a: "Data.dtype", correct: false },
 		  { a: "All can be used", correct: false },
 		],
+		img: '12.png',
 	  },
 	  {
-		q: "Add a new column called rounded to the dataframe and populate it with rounded weights, the name of the dataframe is da it has the following data, note the round is 2     wieght0 1.000001 2.000002 3.000003 4.00000",
+		q: "Add a new column called rounded to the dataframe and populate it with rounded weights, the name of the dataframe is da it has the following data, note the round is 2",
 		a: [
 		  { a: "data['rounded'] = data.weight.round(2)", correct: false },
 		  { a: "data['rounded'] = data.weight.lambda (2)(2)", correct: false },
 		  { a: "data['rounded'] = data.weight.Round(2)", correct: false },
 		  { a: "da['rounded'] = da.weight.round(2)", correct: false },
 		],
+		img: '13.png',
 	  },
 	  {
 		q: "Write a method to find the datatype of each column in a dataframe called y",
 		a: [{ a: "y.dtypes", correct: true }],
 	  },
 	  {
-		q: "What is this table for?<br /> FSIQVIQPIQWeightHeightMRI_CountFSIQ1.0000000.9466390.934125-0.051483-0.0860020.357641VIQ0.9466391.0000000.778135-0.076088-0.0710680.337478PIQ0.9341250.7781351.0000000.002512-0.0767230.386817Weight-0.051483-0.0760880.0025121.0000000.6996140.513378Height-0.086002-0.071068-0.0767230.6996141.0000000.601712MRI_Count0.3576410.3374780.3868170.5133780.6017121.000000",
+		q: "What is this table for?",
 		a: [
 		  { a: "this is a dataframe file.", correct: false },
 		  { a: "The is the correlation for a dataframe.", correct: false },
@@ -430,6 +432,7 @@ const python = [
 		  },
 		  { a: "This is output of head() method in pandas", correct: false },
 		],
+		img: '14.png'
 	  },
 	  {
 		q: "Write a command to view the five 5 lines of the dataframe imported by pandas as brain.",
@@ -453,6 +456,7 @@ const python = [
 		  { a: "True", correct: false },
 		  { a: "False", correct: false },
 		],
+		img: '15.png'
 	  },
 	  {
 		q: "Heat map is used to visualize the correlation for a dataframe!",
@@ -478,27 +482,30 @@ const python = [
 		],
 	  },
 	  {
-		q: "districtsalesstores01231.01212156.0132310.01634519.0245437.06If the dataframe above called SA, you can reach the Sales column in this way SA.sales or  SA.['sales']",
+		q: "If the dataframe above called SA, you can reach the Sales column in this way SA.sales or  SA.['sales']",
 		a: [
 		  { a: "True", correct: false },
 		  { a: "False", correct: false },
 		],
+		img: '16.png'
 	  },
 	  {
-		q: "Upload (Mbit/s)DateTimePing (ms)Download (Mbit/s)014.312016-11-2413:36:2526.99291.80114.122016-11-2413:36:5524.53288.19214.112016-11-2413:37:2520.22559.86314.222016-11-2413:37:5719.33291.81414.082016-11-2413:38:2722.49492.05Before saving the DataFrame, it makes sense to reposition Upload as the last column. This can be achieved using the reindex function.ex: df_compact_clean = df_compact_clean.reindex(columns = ['Date', 'Time', 'Ping (ms)','Download (Mbit/s)','Upload (Mbit/s)']);",
+		q: "Before saving the DataFrame, it makes sense to reposition Upload as the last column. This can be achieved using the reindex function.<br />ex: df_compact_clean = df_compact_clean.reindex(columns = ['Date', 'Time', 'Ping (ms)','Download (Mbit/s)','Upload (Mbit/s)']);",
 		a: [
 		  { a: "True", correct: false },
 		  { a: "False", correct: false },
 		],
+		img: '17.png'
 	  },
 	  {
-		q: "df_compact_clean = df_compact_clean.reindex(columns = ['Date', 'Time', 'Ping (ms)','Download (Mbit/s)','Upload (Mbit/s)']);what will be the first column?<br />Upload (Mbit/s)DateTimePing (ms)Download (Mbit/s)014.312016-11-2413:36:2526.99291.80114.122016-11-2413:36:5524.53288.19214.112016-11-2413:37:2520.22559.86314.222016-11-2413:37:5719.33291.81414.082016-11-2413:38:2722.49492.05",
+		q: "df_compact_clean = df_compact_clean.reindex(columns = ['Date', 'Time', 'Ping (ms)','Download (Mbit/s)','Upload (Mbit/s)']);<br />what will be the first column?",
 		a: [
 		  { a: "Upload (Mbit/s)", correct: false },
 		  { a: "Time", correct: false },
 		  { a: "Date", correct: false },
 		  { a: "Download (Mbit/s)", correct: false },
 		],
+		img: '18.png'
 	  },
 	  {
 		q: "To draw an arrow on a figure, then you can use the method called __________ from the matplotlib module (plt)",
@@ -510,13 +517,14 @@ const python = [
 		],
 	  },
 	  {
-		q: "what method/function produces this output  from a dataframe called PP<class 'pandas.core.frame.DataFrame'>RangeIndex: 915 entries, 0 to 914Data columns (total 12 columns):PassengerId 915 non-null int64Survived 915 non-null int64Pclass 915 non-null int64Name 915 non-null objectGender 915 non-null objectAge 738 non-null float64SibSp 915 non-null int64",
+		q: "what method/function produces this output  from a dataframe called PP",
 		a: [
 		  { a: "PP.describe", correct: false },
 		  { a: "PP.info()", correct: false },
 		  { a: "PP.head()", correct: false },
 		  { a: "info(PP)", correct: false },
 		],
+		img: '19.png'
 	  },
 	  {
 		q: "To change the datatype of a column called ping in a data frame called  df_compact_clean, you can use a lambda function in this way df_compact_clean['Ping (ms)_float'] = df_compact_clean['Ping (ms)'].apply(lambda val: float(val))",
@@ -526,7 +534,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "To calculate the error,  which module used (according to the labs)order = 1p = np.poly1d(np.polyfit(x, y ,order))from _________  import r2_scorer2 = r2_score(y, p(x))r2",
+		q: "To calculate the error,  which module used (according to the labs)<br />order = 1<br />p = np.poly1d(np.polyfit(x, y ,order))<br />from _________  import r2_scorer<br />2 = r2_score(y, p(x))<br />r2",
 		a: [
 		  { a: "scikit", correct: false },
 		  { a: "sklearn", correct: false },
@@ -542,13 +550,14 @@ const python = [
 		],
 	  },
 	  {
-		q: "districtsalesstores01231.01212156.0132310.01634519.0245437.06Drop the District column using the drop method. (Donot create a new dataframe, drop it from this dataframe itself) Important: the dataframe names is df",
+		q: "Drop the District column using the drop method. (Donot create a new dataframe, drop it from this dataframe itself) Important: the dataframe names is df",
 		a: [
 		  { a: "df.drop('district',axis=1)", correct: false },
 		  { a: "df.drop('district',axis=1,inplace=True)", correct: false },
 		  { a: "sales = df.drop('district',axis=1)", correct: false },
 		  { a: "sales = df.drop('district',axis=1, inplace=True)", correct: false },
 		],
+		img: "20.png"
 	  },
 	  {
 		q: "Data can be summarized using visualizations to help others understand the data. You need to focus on the data when you present .",
@@ -576,7 +585,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "df_compact.to_csv('rpi_data_processed.csv', index=False)in the given code, it is necessary to make the index false.  Isn't it?",
+		q: "df_compact.to_csv('rpi_data_processed.csv', index=False)<br />in the given code, it is necessary to make the index false.  Isn't it?",
 		a: [
 		  {
 			a: "We should make it True to not introduce new column.",
@@ -591,7 +600,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "Select the best visualization:drawing the percentage of men and women in a class.",
+		q: "Select the best visualization:<br />drawing the percentage of men and women in a class.",
 		a: [
 		  { a: "Scatter", correct: false },
 		  { a: "Line", correct: false },
@@ -600,7 +609,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "x = lambda a,b : a ** bprint (x(2, 10))",
+		q: "x = lambda a,b : a ** b<br />print (x(2, 10))",
 		a: [
 		  { a: "2222222222222", correct: false },
 		  { a: "Error", correct: false },
@@ -624,7 +633,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'What is the expected output of the following code?<br />import mathtry:     print(math.sqrt(-9))except ValueError:    print("inf")else:     print("fine")finally:     print("the end")',
+		q: 'What is the expected output of the following code?<br />import math<br />try:<br />     print(math.sqrt(-9))<br />except ValueError:<br />    print("inf")<br />else:<br />     print("fine")<br />finally:<br />     print("the end")',
 		a: [
 		  { a: "inf the end", correct: false },
 		  { a: "fine the end", correct: false },
@@ -633,7 +642,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "Select the best visualization:Average salary  based on a number of months",
+		q: "Select the best visualization:<br />Average salary  based on a number of months",
 		a: [
 		  { a: "Pie", correct: false },
 		  { a: "Bar", correct: false },
@@ -658,7 +667,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "Select the best visualization:drawing the throughput on a cable connecting two routers.",
+		q: "Select the best visualization:<br />drawing the throughput on a cable connecting two routers.",
 		a: [
 		  { a: "Scatter", correct: false },
 		  { a: "Pie", correct: false },
@@ -676,21 +685,21 @@ const python = [
 		],
 	  },
 	  {
-		q: "# Modify this code floor_types = ['Parking', 'Shops', 'Food Court', 'Offices']floor_numbers = # Fill in the blank # put your code here zipped = list(zip(floor_types ,floor_numbers )) print(zipped)# To get this output [('Parking', 1), ('Shops', 2), ('Food Court', 3), ('Offices', 4)]",
+		q: "# Modify this code<br />floor_types = ['Parking', 'Shops', 'Food Court', 'Offices']<br />floor_numbers = # Fill in the blank # put your code here<br />zipped = list(zip(floor_types ,floor_numbers ))<br />print(zipped)<br /><br /># To get this output [('Parking', 1), ('Shops', 2), ('Food Court', 3), ('Offices', 4)]",
 		a: [
 		  { a: "[1, 2, 3, 4]", correct: true },
 		  { a: "range(1,5)", correct: false },
 		],
 	  },
 	  {
-		q: "Given the following nested list, use indexing to grab the word \"Hi Big Data learner\". lst = ['a','b',[4,10,'Hi Big Data learner'],['c',[1,66,['this']],2,111],'e',7]",
+		q: "Given the following nested list, use indexing to grab the word<br />\"Hi Big Data learner\". lst = ['a','b',[4,10,'Hi Big Data learner'],['c',[1,66,['this']],2,111],'e',7]",
 		a: [
 		  { a: "lst[2][2]", correct: true },
 		  { a: "lst[2] [2]", correct: false },
 		],
 	  },
 	  {
-		q: 'What is the expected output of the following code?<br />import mathtry:     print(math.sqrt(9))except ValueError:    print("inf")else:    print("fine")',
+		q: 'What is the expected output of the following code?<br />import math<br />try:     print(math.sqrt(9))<br />except ValueError:<br />    print("inf")<br />else:<br />    print("fine")',
 		a: [
 		  { a: "Error", correct: false },
 		  { a: "fine", correct: false },
@@ -698,14 +707,16 @@ const python = [
 		  { a: "3.0 fine", correct: false },
 		],
 	  },
+	  //TODO: here
 	  {
 		q: "Which of the following ARE type of data?",
 		a: [
-		  { a: "Open Data", correct: false },
+		  { a: "Open Data", correct: true },
 		  { a: "Private Data", correct: false },
 		  { a: "Close Data", correct: false },
 		  { a: "Public Data", correct: false },
 		],
+		multiply: true,
 	  },
 	  {
 		q: "Which of the following is considered traditional data storage.",
@@ -717,7 +728,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "To fill a NaN values in a column in the age column , you can use the following codeNote: the dataframe called training<class 'pandas.core.frame.DataFrame'>RangeIndex: 915 entries, 0 to 914Data columns (total 12 columns):PassengerId 915 non-null int64Survived 915 non-null int64Pclass 915 non-null int64Name 915 non-null objectGender 915 non-null objectAge 738 non-null float64SibSp 915 non-null int64",
+		q: "To fill a NaN values in a column in the age column , you can use the following codeNote: the dataframe called training",
 		a: [
 		  { a: 'training["Age"].fillna(training["Age"].mean())', correct: false },
 		  {
@@ -730,9 +741,10 @@ const python = [
 			correct: false,
 		  },
 		],
+		img: "21.png"
 	  },
 	  {
-		q: "How many default subplot will be generated from this codefig, ax = plt.subplots(1, 2, figsize=(10, 10))",
+		q: "How many default subplot will be generated from this code<br />fig, ax = plt.subplots(1, 2, figsize=(10, 10))",
 		a: [
 		  { a: "2", correct: false },
 		  { a: "3", correct: false },
@@ -759,7 +771,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "What is the outputfoo = [i + i for i in range(5)]print (foo)",
+		q: "What is the output<br />foo = [i + i for i in range(5)]<br />print (foo)",
 		a: [
 		  { a: "[0. 2. 4 .6 .8]", correct: false },
 		  { a: "0 2 4 6 8", correct: false },
@@ -799,20 +811,21 @@ const python = [
 		],
 	  },
 	  {
-		q: "In this way, we can drop the row from a dataframe named dfp dfp.drop(45)",
+		q: "In this way, we can drop the row from a dataframe named dfp<br />dfp.drop(45)",
 		a: [
 		  { a: "True", correct: false },
 		  { a: "False", correct: false },
 		],
 	  },
 	  {
-		q: "<class 'pandas.core.frame.DataFrame'>RangeIndex: 915 entries, 0 to 914Data columns (total 12 columns):PassengerId 915 non-null int64Survived 915 non-null int64Pclass 915 non-null int64Name 915 non-null objectGender 915 non-null objectAge 738 non-null float64SibSp 915 non-null int64According to the above lines, In which column(s) there are NaN values.",
+		q: "",
 		a: [
 		  { a: "Pclass", correct: false },
 		  { a: "No NaN values are there", correct: false },
 		  { a: "Gender", correct: false },
 		  { a: "Age", correct: false },
 		],
+		img: "22.png"
 	  },
 	  {
 		q: "Data in Motion",

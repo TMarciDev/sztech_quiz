@@ -1,10 +1,10 @@
 const res = [
   {
-    q: "What is the output?print(2 ** 2 ** 3)",
+    q: "What is the output?<br />print(2 ** 2 ** 3)",
     a: [{ a: "256", correct: true }],
   },
   {
-    q: "What is the output?var = 2var = 3print(var)",
+    q: "What is the output?<br />var = 2var = 3print(var)",
     a: [
       { a: "2", correct: false },
       { a: "Error", correct: false },
@@ -41,7 +41,7 @@ const res = [
     ],
   },
   {
-    q: "what is the output?print(5. // 2.)",
+    q: "what is the output?<br />print(5. // 2.)",
     a: [
       { a: "3", correct: false },
       { a: "3.0", correct: false },
@@ -50,7 +50,7 @@ const res = [
     ],
   },
   {
-    q: "what is the output?print ('2' + '2')",
+    q: "what is the output?<br />print ('2' + '2')",
     a: [{ a: "22", correct: true }],
   },
   {
@@ -61,7 +61,7 @@ const res = [
     ],
   },
   {
-    q: "what is the output?a = 6b = 3a /= 2 * bprint(a)",
+    q: "what is the output?<br />a = 6b = 3a /= 2 * bprint(a)",
     a: [
       { a: "1", correct: false },
       { a: "9", correct: false },
@@ -106,7 +106,7 @@ const res = [
     ],
   },
   {
-    q: 'How many star is printed?i = 2while i >= 0:    print("*")    i -= 2',
+    q: 'How many star is printed?<br />i = 2while i >= 0:    print("*")    i -= 2',
     a: [
       { a: "one", correct: false },
       { a: "two", correct: false },
@@ -115,7 +115,7 @@ const res = [
     ],
   },
   {
-    q: 'What is the output?hi()def hi():     print("hi!")',
+    q: 'What is the output?<br />hi()def hi():     print("hi!")',
     a: [
       { a: "None", correct: false },
       { a: "Error", correct: false },
@@ -133,7 +133,7 @@ const res = [
     ],
   },
   {
-    q: "What is the output?for i in range (-1,1):     print ('%')",
+    q: "What is the output?<br />for i in range (-1,1):     print ('%')",
     a: [
       { a: "out of range", correct: false },
       { a: "%", correct: false },
@@ -142,7 +142,7 @@ const res = [
     ],
   },
   {
-    q: "what is the output?m_l = [3,1,-1]m_l[-1] = m_l[-2]print (m_l)",
+    q: "what is the output?<br />m_l = [3,1,-1]m_l[-1] = m_l[-2]print (m_l)",
     a: [
       { a: "[3,-1,-1]", correct: false },
       { a: "[3,1,1]", correct: false },
@@ -173,7 +173,7 @@ const res = [
     a: [{ a: "from math import pi as PI", correct: true }],
   },
   {
-    q: "What is the expected output of the following code?the_list = ['Where', 'are', 'the', 'snows?']s = '*'.join(the_list)print(s)",
+    q: "What is the expected output of the following code?<br />the_list = ['Where', 'are', 'the', 'snows?']s = '*'.join(the_list)print(s)",
     a: [
       { a: "Where*are*the*snows?", correct: false },
       { a: "Error, it is immutable", correct: false },
@@ -240,7 +240,7 @@ const res = [
     ],
   },
   {
-    q: 'What is the output of the following snippet?from datetime import timet = time(14, 39)print(t.strftime("%H:%M:%S"))',
+    q: 'What is the output of the following snippet?<br />from datetime import timet = time(14, 39)print(t.strftime("%H:%M:%S"))',
     a: [
       { a: "14:39", correct: false },
       { a: "Error", correct: false },
@@ -265,7 +265,7 @@ const res = [
     ],
   },
   {
-    q: "What is the output of the following snippet?from datetime import dateimport timetimestamp = time.time()d = date.fromtimestamp(timestamp)print(d)",
+    q: "What is the output of the following snippet?<br />from datetime import dateimport timetimestamp = time.time()d = date.fromtimestamp(timestamp)print(d)",
     a: [
       { a: "2023-04-03 15:00", correct: false },
       { a: "20230403.03042023", correct: false },
@@ -274,7 +274,7 @@ const res = [
     ],
   },
   {
-    q: "What is the problem with this program ? If there is !from datetime import timedeltafrom datetime import datefrom dateTime import datetimedelta = timedelta(weeks=2, days=2, hours=2)print(delta)delta2 = delta * 2print(delta2)d = date(2019, 10, 4) + delta2print(d)dt = datetime(2019, 10, 4, 14, 53) + delta2print(dt)",
+    q: "What is the problem with this program ?<br /> If there is !from datetime import timedeltafrom datetime import datefrom dateTime import datetimedelta = timedelta(weeks=2, days=2, hours=2)print(delta)delta2 = delta * 2print(delta2)d = date(2019, 10, 4) + delta2print(d)dt = datetime(2019, 10, 4, 14, 53) + delta2print(dt)",
     a: [
       { a: "No problem found, it is working", correct: false },
       { a: "we should write from datetime import *", correct: false },
@@ -283,7 +283,7 @@ const res = [
     ],
   },
   {
-    q: 'What is the output of the following snippet?from datetime import datetimedt = datetime(2023, 4, 3, 15, 10)print(dt.strftime("%y/%m/%d-%H:%M:%S"))',
+    q: 'What is the output of the following snippet?<br />from datetime import datetimedt = datetime(2023, 4, 3, 15, 10)print(dt.strftime("%y/%m/%d-%H:%M:%S"))',
     a: [
       { a: "23/04/03-15:10:10", correct: false },
       { a: "23/04/03-15:00:10", correct: false },
@@ -292,7 +292,7 @@ const res = [
     ],
   },
   {
-    q: "What is the output of the following snippet?from datetime import datetoday = date.today()print(today)",
+    q: "What is the output of the following snippet?<br />from datetime import datetoday = date.today()print(today)",
     a: [
       { a: "2023%04%03", correct: false },
       { a: "2023_04_03", correct: false },
@@ -398,7 +398,7 @@ const res = [
     ],
   },
   {
-    q: "Which method would you use to view table statistics? for a data frame called Data?weightcount10000.000000mean20.499212std0.199874min19.75200025%20.36500050%20.50000075%20.635000max21.171000",
+    q: "Which method would you use to view table statistics?<br /> for a data frame called Data?weightcount10000.000000mean20.499212std0.199874min19.75200025%20.36500050%20.50000075%20.635000max21.171000",
     a: [
       { a: "Data.head()", correct: false },
       { a: "Data.describe()", correct: false },
@@ -420,7 +420,7 @@ const res = [
     a: [{ a: "y.dtypes", correct: true }],
   },
   {
-    q: "What is this table for? FSIQVIQPIQWeightHeightMRI_CountFSIQ1.0000000.9466390.934125-0.051483-0.0860020.357641VIQ0.9466391.0000000.778135-0.076088-0.0710680.337478PIQ0.9341250.7781351.0000000.002512-0.0767230.386817Weight-0.051483-0.0760880.0025121.0000000.6996140.513378Height-0.086002-0.071068-0.0767230.6996141.0000000.601712MRI_Count0.3576410.3374780.3868170.5133780.6017121.000000",
+    q: "What is this table for?<br /> FSIQVIQPIQWeightHeightMRI_CountFSIQ1.0000000.9466390.934125-0.051483-0.0860020.357641VIQ0.9466391.0000000.778135-0.076088-0.0710680.337478PIQ0.9341250.7781351.0000000.002512-0.0767230.386817Weight-0.051483-0.0760880.0025121.0000000.6996140.513378Height-0.086002-0.071068-0.0767230.6996141.0000000.601712MRI_Count0.3576410.3374780.3868170.5133780.6017121.000000",
     a: [
       { a: "this is a dataframe file.", correct: false },
       { a: "The is the correlation for a dataframe.", correct: false },
@@ -492,7 +492,7 @@ const res = [
     ],
   },
   {
-    q: "df_compact_clean = df_compact_clean.reindex(columns = ['Date', 'Time', 'Ping (ms)','Download (Mbit/s)','Upload (Mbit/s)']);what will be the first column?Upload (Mbit/s)DateTimePing (ms)Download (Mbit/s)014.312016-11-2413:36:2526.99291.80114.122016-11-2413:36:5524.53288.19214.112016-11-2413:37:2520.22559.86314.222016-11-2413:37:5719.33291.81414.082016-11-2413:38:2722.49492.05",
+    q: "df_compact_clean = df_compact_clean.reindex(columns = ['Date', 'Time', 'Ping (ms)','Download (Mbit/s)','Upload (Mbit/s)']);what will be the first column?<br />Upload (Mbit/s)DateTimePing (ms)Download (Mbit/s)014.312016-11-2413:36:2526.99291.80114.122016-11-2413:36:5524.53288.19214.112016-11-2413:37:2520.22559.86314.222016-11-2413:37:5719.33291.81414.082016-11-2413:38:2722.49492.05",
     a: [
       { a: "Upload (Mbit/s)", correct: false },
       { a: "Time", correct: false },
@@ -624,7 +624,7 @@ const res = [
     ],
   },
   {
-    q: 'What is the expected output of the following code?import mathtry:     print(math.sqrt(-9))except ValueError:    print("inf")else:     print("fine")finally:     print("the end")',
+    q: 'What is the expected output of the following code?<br />import mathtry:     print(math.sqrt(-9))except ValueError:    print("inf")else:     print("fine")finally:     print("the end")',
     a: [
       { a: "inf the end", correct: false },
       { a: "fine the end", correct: false },
@@ -690,7 +690,7 @@ const res = [
     ],
   },
   {
-    q: 'What is the expected output of the following code?import mathtry:     print(math.sqrt(9))except ValueError:    print("inf")else:    print("fine")',
+    q: 'What is the expected output of the following code?<br />import mathtry:     print(math.sqrt(9))except ValueError:    print("inf")else:    print("fine")',
     a: [
       { a: "Error", correct: false },
       { a: "fine", correct: false },
@@ -781,7 +781,7 @@ const res = [
     ],
   },
   {
-    q: "This code can be used to find  how many values in dataframe are NaN?df_compact.isnull().sum().sum()Which of the following can also be used to find the number of NaN in the dataframe?",
+    q: "This code can be used to find  how many values in dataframe are NaN?<br />df_compact.isnull().sum().sum()<br />Which of the following can also be used to find the number of NaN in the dataframe?",
     a: [
       { a: "all the choices", correct: false },
       { a: "df_compact.head()", correct: false },

@@ -129,7 +129,7 @@ checkButton.addEventListener('click', () => {
 
 const newQuestion = () => {
 	const q = questions[currentQ];
-	questionField.innerText = q.q;
+	questionField.innerHTML = q.q;
 	length = q.a.length;
 
 	if (q.hasOwnProperty('img')) {

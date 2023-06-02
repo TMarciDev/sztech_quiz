@@ -106,7 +106,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'How many star is printed?<br />i = 2<br />while i >= 0:<br />    print("*")<br />    i -= 2',
+		q: 'How many star is printed?<br />i = 2<br />while i >= 0:<br />____print("*")<br />____i -= 2',
 		a: [
 		  { a: "one", correct: false },
 		  { a: "two", correct: true },
@@ -115,7 +115,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'What is the output?<br />hi()<br />def hi():<br />     print("hi!")',
+		q: 'What is the output?<br />hi()<br />def hi():<br />____ print("hi!")',
 		a: [
 		  { a: "None", correct: false },
 		  { a: "Error", correct: true },
@@ -133,7 +133,7 @@ const python = [
 		],
 	  },
 	  {
-		q: "What is the output?<br />for i in range (-1,1):<br />     print ('%')",
+		q: "What is the output?<br />for i in range (-1,1):<br />____ print ('%')",
 		a: [
 		  { a: "out of range", correct: false },
 		  { a: "%", correct: false },
@@ -151,7 +151,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'def hi():<br />     return<br />     print("Hi!")<br />hi()',
+		q: 'def hi():<br />____ return<br />____ print("Hi!")<br />hi()',
 		a: [
 		  { a: "Error", correct: false },
 		  { a: "hi!", correct: false },
@@ -632,7 +632,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'What is the expected output of the following code?<br />import math<br />try:<br />     print(math.sqrt(-9))<br />except ValueError:<br />    print("inf")<br />else:<br />     print("fine")<br />finally:<br />     print("the end")',
+		q: 'What is the expected output of the following code?<br />import math<br />try:<br />____ print(math.sqrt(-9))<br />except ValueError:<br />____print("inf")<br />else:<br />____ print("fine")<br />finally:<br />____ print("the end")',
 		a: [
 		  { a: "inf the end", correct: true },
 		  { a: "fine the end", correct: false },
@@ -697,7 +697,7 @@ const python = [
 		],
 	  },
 	  {
-		q: 'What is the expected output of the following code?<br />import math<br />try:     print(math.sqrt(9))<br />except ValueError:<br />    print("inf")<br />else:<br />    print("fine")',
+		q: 'What is the expected output of the following code?<br />import math<br />try:____ print(math.sqrt(9))<br />except ValueError:<br />____print("inf")<br />else:<br />____print("fine")',
 		a: [
 		  { a: "Error", correct: false },
 		  { a: "fine", correct: false },
@@ -836,13 +836,14 @@ const python = [
 		  { a: "Data stored for analyzing", correct: false },
 		],
 		multiply: true,
+
 	  },
 	  {
 		q: "Learn from the data itself",
 		a: [
 		  { a: "Supervised ML", correct: false },
 		  { a: "AI", correct: false },
-		  { a: "Unsupervised ML", correct: true },
+		  { a: "Unsupervised ML", correct: false },
 		  { a: "Data Mining", correct: false },
 		],
 	  },

@@ -16,11 +16,15 @@ var correct = 0;
 var all = 0;
 var added = 0;
 
-var questions = [...questions1];
+var questions = [...python];
 
 selector.addEventListener('change', (e) => {
 	added = 0;
 	switch (e.target.value) {
+		case '0': {
+			questions = [...python];
+			break;
+		}
 		case '1': {
 			questions = [...questions1];
 			break;
@@ -34,7 +38,7 @@ selector.addEventListener('change', (e) => {
 			break;
 		}
 		default: {
-			questions = [...questions3];
+			questions = [...python];
 		}
 	}
 	startQuiz();

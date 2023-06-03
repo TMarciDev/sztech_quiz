@@ -6,6 +6,11 @@ body {
     display: flex;
     align-items: middle;
     justify-content: center;
+    background-color: #27374D;
+    color: #DDE6ED !important
+}
+label {
+    color: #DDE6ED !important
 }
 
 .quiz-container {

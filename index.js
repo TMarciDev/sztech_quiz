@@ -88,14 +88,14 @@ checkButton.addEventListener('click', () => {
 			radios[i].disabled = true;
 			const isCorrect = a.correct;
 			if (isCorrect) {
-				label.style.color = 'green';
+				label.style.setProperty('color', 'green', 'important');
 				label.style.textDecoration = 'underLine';
 				corrects++;
 				if (isChecked) {
 					++myCorrects;
 				}
 			} else if (!isCorrect && isChecked) {
-				label.style.color = 'red';
+				label.style.setProperty('color', 'red', 'important');
 				label.style.textDecoration = 'underLine';
 				myCorrects = 0;
 				corrects = 10;

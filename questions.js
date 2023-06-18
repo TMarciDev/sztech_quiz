@@ -1,13 +1,1025 @@
 const test = [
-	{
-		q: 'How many star is printed?<br />i = 2<br />while i >= 0:<br /><span style="color: #27374D">____</span>print("*")<br /><span style="color: #27374D">____</span>i -= 2',
-		a: [
-		  { a: "one", correct: false },
-		  { a: "two", correct: true },
-		  { a: "three", correct: false },
-		  { a: "zero", correct: false },
-		],
-	  },
+  {
+    q: 'How many star is printed?<br />i = 2<br />while i >= 0:<br /><span style="color: #27374D">____</span>print("*")<br /><span style="color: #27374D">____</span>i -= 2',
+    a: [
+      { a: "one", correct: false },
+      { a: "two", correct: true },
+      { a: "three", correct: false },
+      { a: "zero", correct: false },
+    ],
+  },
+];
+
+const cpp = [
+  {
+    q: "Hány byte-on tárol a C++ egy karaktert? (char)",
+    a: [
+      { a: "Implementáció függő", correct: true },
+      { a: "1", correct: false },
+    ],
+  },
+  {
+    q: "Melyik állítás hamis?",
+    a: [
+      { a: "sizeof(float) <= sizeof(double)", correct: false },
+      { a: "sizeof(short) <= sizeof(int)", correct: false },
+      { a: "sizeof(unsigned char) == sizeof(char)", correct: false },
+      { a: "sizeof(double) < sizeof(long double)", correct: true },
+    ],
+  },
+  {
+    q: "Melyik állítás igaz?",
+    a: [
+      { a: "A 4e-1 és a 0.4 konstansok értéke megegyezik.", correct: true },
+      { a: "A 4e-1f és a 4.1 konstansok típusa megegyezik.", correct: false },
+      { a: "A 4e-1f és a 4.1 konstansok értéke megegyezik.", correct: false },
+      { a: "A 4e2 és a 4.2L konstansok típusa megegyezik.", correct: false },
+    ],
+  },
+  {
+    q: "Melyik nem preprocesszor direktíva?",
+    a: [
+      { a: "#else", correct: false },
+      { a: "#elif", correct: false },
+      { a: "#undef", correct: false },
+      { a: "#while", correct: true },
+    ],
+  },
+  {
+    q: "Melyik definíció az alábbiak közül?",
+    a: [
+      { a: "class MyClass", correct: false },
+      { a: "int a[10]", correct: true },
+      { a: "extern int i", correct: false },
+      { a: "struct MyStruct", correct: false },
+    ],
+  },
+  {
+    q: "Melyik állítás igaz az alábbiak közül?",
+    a: [
+      {
+        a: "Az autómatikus változók a változók a stacken jönnek létre",
+        correct: true,
+      },
+      {
+        a: "Az autómatikus változók a változók a statikus tárterületen jönnek létre",
+        correct: false,
+      },
+      {
+        a: "Az autómatikus változók a változók a winchester-en jönnek létre",
+        correct: false,
+      },
+      {
+        a: "Az autómatikus változók a változók a heap-en jönnek létre",
+        correct: false,
+      },
+    ],
+  },
+  {
+    q: "Stack rendezési elve",
+    a: [{ a: "LIFO", correct: true }],
+  },
+  {
+    q: "Mi a csillagozott sorban meghívott művelet neve?",
+    a: [
+      { a: "destructor", correct: false },
+      { a: "default contstructor", correct: false },
+      { a: "értékadás operátor", correct: false },
+      { a: "copy constructor", correct: true },
+    ],
+    img: "23.png",
+  },
+  {
+    q: "Az alábbi példában a Foo f(5); konstruktor hívása után mennyi lesz a f.b értéke",
+    a: [
+      { a: "10", correct: false },
+      { a: "nem definiált", correct: false },
+      { a: "0", correct: false },
+      { a: "15", correct: true },
+    ],
+    img: "24.png",
+  },
+  {
+    q: "Melyik típusnak van push_front tagfüggvénye?",
+    a: [
+      { a: "std::list", correct: true },
+      { a: "std::set", correct: false },
+      { a: "std::vector", correct: false },
+      { a: "std::stack", correct: false },
+    ],
+  },
+  {
+    q: "Adott az alábbi x típus és f függvény. Az f(x) függvény hívásakor az x típus melyik műveletét hajtjuk végre a paraméter átadásához?",
+    a: [
+      { a: "Az x típus default konstruktorát", correct: false },
+      { a: "Az x típus értékadás operátorát", correct: false },
+      { a: "Nem hajtódik végre művelet, mert x hivatkozás szerint adódik át", correct: false },
+      { a: "Az x típus copy contructor", correct: true },
+    ],
+    img: "25.png",
+  },
+  {
+    q: "Az alábbi kódban a csillagozott helyen mi a this-nek a típusa?",
+    a: [
+      { a: "const Foo*", correct: false },
+      { a: "Foo*", correct: true },
+      { a: "Foo&", correct: false },
+      { a: "void*", correct: false },
+    ],
+    img: "26.png",
+  },
+  {
+    q: "Melyik állítás igaz az alábbiak közül?",
+    a: [
+      { a: "Nem származtathatunk az std::string típusból, mert nincs virtuális destruktora.", correct: false },
+      { a: "Származtathatunk az std::string típusból.", correct: true },
+      { a: "Nem származtathatunk az std::string típusból, mert az nem típus, hanem typedef.", correct: false },
+      { a: "Nem származtathatunk az std::string típusból, mert nincsenek protected adattagjai.", correct: false },
+    ],
+  },
+  {
+    q: "Melyik NEM lehet template paraméter az alábbiak közül?",
+    a: [
+      { a: "Típus", correct: false },
+      { a: "Külső szerkesztésű függvény címe", correct: false },
+      { a: "Egész konstans", correct: false },
+      { a: "Karakterlánc iterál", correct: true },
+    ],
+  },
+  {
+    q: "Mennyi az értéke i-nek az alábbi kód végrehajtása után:",
+    a: [
+      { a: "-1", correct: false },
+      { a: "255", correct: false },
+      { a: "implemetáció függő", correct: true },
+      { a: "nem fordul le", correct: false },
+    ],
+    img: "27.png",
+  },
+  {
+    q: "Melyik értakadás szabályos az alábbi kód után?",
+    a: [
+      { a: "p = *j", correct: false },
+      { a: "*p = j", correct: false },
+      { a: "p *= i", correct: false },
+      { a: "p = &i", correct: true },
+    ],
+    img: "28.png",
+  },
+  {
+    q: "Hány byteon tárol a C++ egy double-t",
+    a: [
+      { a: "4", correct: false },
+      { a: "8", correct: false },
+      { a: "6", correct: false },
+      { a: "implementáció függő", correct: true },
+    ],
+  },
+  {
+    q: `Mi a típusa a "Hello" literálnak?`,
+    a: [
+      { a: "const std::string", correct: false },
+      { a: "char*", correct: false },
+      { a: "cher[5]", correct: false },
+      { a: "const char[6]", correct: true },
+    ],
+  },
+  {
+    q: "Melyik kulcsszó NEM a tárolási osztályt specifikálja egy deklarációban ill. definícióban?",
+    a: [
+      { a: "extern", correct: false },
+      { a: "static", correct: false },
+      { a: "auto", correct: false },
+      { a: "int", correct: true },
+    ],
+  },
+  {
+    q: "Melyik igaz az alábbiak közül?",
+    a: [
+      { a: "A globális változók a heap-en jönnek lére", correct: false },
+      { a: "A globális változók a statikus tárterületen jönnek lére", correct: true },
+      { a: "A globális változók a winchester-en jönnek lére", correct: false },
+      { a: "A globális változók a stack-en jönnek lére", correct: false },
+    ],
+  },
+  {
+    q: "Melyik igaz az alábbiak közül?",
+    a: [
+      { a: "A fenti struct-nak nincs default konstruktora.", correct: true },
+      { a: "A fenti struct-nak csak default konstruktora vam.", correct: false },
+      { a: "A fenti struct-nak nincs copy konstruktora.", correct: false },
+      { a: "A fenti struct-nak van default konstruktora.", correct: false },
+    ],
+    img: "29.png",
+  },
+  {
+    q: "Az alábbiak közül melyiket kötelező inicializálni az inicializáló listában?",
+    a: [
+      { a: "az összes adattagot", correct: false },
+      { a: "tömböket", correct: false },
+      { a: "semmit sem kötelező inicializálni", correct: false },
+      { a: "a konstansokat", correct: true },
+    ],
+  },
+  {
+    q: "Melyik konténer asszociatív?",
+    a: [
+      { a: "std::queue", correct: false },
+      { a: "std::set", correct: false },
+      { a: "std::vector", correct: false },
+      { a: "std::list", correct: false },
+    ],
+  },
+  {
+    q: "Mi lesz az 'a' változó értéke a függvényhívás után?",
+    a: [
+      { a: "nem definiált", correct: false },
+      { a: "2", correct: true },
+      { a: "semmi, fordítási hiba keletkezik", correct: false },
+      { a: "1", correct: false },
+    ],
+    img: "30.png",
+  },
+  {
+    q: "Az alábbi függvény deklarációk alapján melyik tagfüggvény hívható meg const Foo objektumon?",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
+  {
+    q: "",
+    a: [
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+      { a: "", correct: false },
+    ],
+    img: ".png",
+  },
 ];
 
 const python = [

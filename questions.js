@@ -16,6 +16,8 @@ const cpp = [
     a: [
       { a: "Implementáció függő", correct: true },
       { a: "1", correct: false },
+      { a: "4", correct: false },
+      { a: "8", correct: false },
     ],
   },
   {
@@ -72,6 +74,27 @@ const cpp = [
       {
         a: "Az autómatikus változók a változók a heap-en jönnek létre",
         correct: false,
+      },
+    ],
+  },
+  {
+    q: "Melyik állítás igaz az alábbiak közül?",
+    a: [
+      {
+        a: "Az dinamikus változók a változók a stacken jönnek létre",
+        correct: true,
+      },
+      {
+        a: "Az dinamikus változók a változók a statikus tárterületen jönnek létre",
+        correct: false,
+      },
+      {
+        a: "Az dinamikus változók a változók a winchester-en jönnek létre",
+        correct: false,
+      },
+      {
+        a: "Az dinamikus változók a változók a heap-en jönnek létre",
+        correct: true,
       },
     ],
   },
@@ -488,37 +511,79 @@ const cpp = [
   {
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
-      { a: "A dynamic_cast fordítási idejű típuskonverziót végez.", correct: false },
-      { a: "A dynamic_cast használatához nem lehet statikus adattagja az osztálynak.", correct: false },
+      {
+        a: "A dynamic_cast fordítási idejű típuskonverziót végez.",
+        correct: false,
+      },
+      {
+        a: "A dynamic_cast használatához nem lehet statikus adattagja az osztálynak.",
+        correct: false,
+      },
       { a: "A dynamic_cast soha nem dob kivételt.", correct: false },
-      { a: "A dynamic_cast használatához polimorf osztályokra van szükség.", correct: true },
+      {
+        a: "A dynamic_cast használatához polimorf osztályokra van szükség.",
+        correct: true,
+      },
     ],
   },
   {
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
-      { a: "Az alaptípusok prefix operator++-nak void a visszatérési érték típusa.", correct: false },
-      { a: "Deklarációban egy péusz paraméterrel tudjuk megkülönböztetni a postfix operator++-t a prefix-től", correct: true },
-      { a: "A postfix operator++ mindig hatékonyabb mint a prefix", correct: false },
-      { a: "A postfix operator++ mindig a megnövelt értéket adja vissza.", correct: false },
+      {
+        a: "Az alaptípusok prefix operator++-nak void a visszatérési érték típusa.",
+        correct: false,
+      },
+      {
+        a: "Deklarációban egy péusz paraméterrel tudjuk megkülönböztetni a postfix operator++-t a prefix-től",
+        correct: true,
+      },
+      {
+        a: "A postfix operator++ mindig hatékonyabb mint a prefix",
+        correct: false,
+      },
+      {
+        a: "A postfix operator++ mindig a megnövelt értéket adja vissza.",
+        correct: false,
+      },
     ],
   },
   {
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
-      { a: "A polimorf osztályok esetében az összes kontruktornak virtuálisnak kell lennie.", correct: false },
-      { a: "Nem lehet olyan osztályból származtatni amelynek nics virtuális konstruktora.", correct: false },
-      { a: "A bázisosztály konstruktorai nem öröklődnek a származtatott típusba", correct: true },
-      { a: "A konstruktorok közül csak a copy contructor lehet virtuális, hogy felüldefiniálható legyen a másolás.", correct: false },
+      {
+        a: "A polimorf osztályok esetében az összes kontruktornak virtuálisnak kell lennie.",
+        correct: false,
+      },
+      {
+        a: "Nem lehet olyan osztályból származtatni amelynek nics virtuális konstruktora.",
+        correct: false,
+      },
+      {
+        a: "A bázisosztály konstruktorai nem öröklődnek a származtatott típusba",
+        correct: true,
+      },
+      {
+        a: "A konstruktorok közül csak a copy contructor lehet virtuális, hogy felüldefiniálható legyen a másolás.",
+        correct: false,
+      },
     ],
   },
   {
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
-      { a: "A parméterdedukció csak a függvények esetében használható.", correct: false },
-      { a: "Nem lehet származtatni typedef által származtatott típusból.", correct: true },
+      {
+        a: "A parméterdedukció csak a függvények esetében használható.",
+        correct: false,
+      },
+      {
+        a: "Nem lehet származtatni typedef által származtatott típusból.",
+        correct: true,
+      },
       { a: "A paraméterdedukció futási időben történik.", correct: false },
-      { a: "AZ objektumok dinamikus típusát ismeri a fordítóprogram.", correct: false },
+      {
+        a: "AZ objektumok dinamikus típusát ismeri a fordítóprogram.",
+        correct: false,
+      },
     ],
   },
   {
@@ -533,10 +598,16 @@ const cpp = [
   {
     q: "Mi a problémája a preprocesszor használatának?",
     a: [
-      { a: "A Java programozási nyelv nem támogatja, ezért nem tudjuk használni a C++-t Java-val.", correct: false },
+      {
+        a: "A Java programozási nyelv nem támogatja, ezért nem tudjuk használni a C++-t Java-val.",
+        correct: false,
+      },
       { a: "A preprocesszor implementáció specifikus.", correct: false },
       { a: "Jelentősen növeli a futási időt.", correct: false },
-      { a: "Független a C++ nyelvtől ezért nincsen tekintettel a nyalvi szabályokra.", correct: true },
+      {
+        a: "Független a C++ nyelvtől ezért nincsen tekintettel a nyalvi szabályokra.",
+        correct: true,
+      },
     ],
   },
   {
@@ -573,7 +644,10 @@ const cpp = [
       { a: "csak egy copy constructora", correct: false },
       { a: "csak egy int paraméteres konstruktora", correct: false },
       { a: "csak egy default konstruktora", correct: false },
-      { a: "copy konstruktora és egy int paraméteres konstruktora", correct: true },
+      {
+        a: "copy konstruktora és egy int paraméteres konstruktora",
+        correct: true,
+      },
     ],
     img: "40.png",
   },
@@ -607,7 +681,10 @@ const cpp = [
   {
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
-      { a: "Az absztrakt osztályban nem lehet objektumot létrhozni.", correct: true },
+      {
+        a: "Az absztrakt osztályban nem lehet objektumot létrhozni.",
+        correct: true,
+      },
       { a: "Az absztrakt osztálynak nem lehet adattagja.", correct: false },
       { a: "Az absztrakt osztályból nem lehet származtatni.", correct: false },
       { a: "Az absztrakt osztálynak nem lehet konstruktora.", correct: false },
@@ -643,6 +720,24 @@ const cpp = [
     ],
   },
   {
+    q: "Melyik reláció hamis az alábbiak közül?",
+    a: [
+      { a: "sizeof(short) <= sizeof(long int)", correct: false },
+      { a: "sizeof(float) <= sizeof(long double)", correct: false },
+      { a: "sizeof(char) == sizeof(signed char)", correct: false },
+      { a: "sizeof(bool) == sizeof(char)", correct: true },
+    ],
+  },
+  {
+    q: "Melyik reláció igaz az alábbiak közül?",
+    a: [
+      { a: "sizeof(char) <= sizeof(double)", correct: true },
+      { a: "sizeof(signed char) < sizeof(char)", correct: false },
+      { a: "sizeof(unsigned char) < sizeof(char)", correct: false },
+      { a: "sizeof(int) < sizeof(char)", correct: false },
+    ],
+  },
+  {
     q: "Az alábbi függvénydeklarációk alapján melyik alapján hívható meg const Foo objektum?",
     a: [
       { a: "foo.b(12)", correct: false },
@@ -655,10 +750,22 @@ const cpp = [
   {
     q: "Mi a paraméterdedukció?",
     a: [
-      { a: "Az az eljárás, amikor referencia-szerinti paraméterátadásra cseréljük az érték-szerintit.", correct: false },
-      { a: "Az az eljárás, amikor a fordítóprogram levezeti a template paramétereket a függvényhívásból", correct: true },
-      { a: "Az az eljárás, amikor linker feloldja a külső függvényhívások paramétereit", correct: false },
-      { a: "Az az eljárás, amikor default paraméterekkel látjuk el a függvény paramétereket", correct: false },
+      {
+        a: "Az az eljárás, amikor referencia-szerinti paraméterátadásra cseréljük az érték-szerintit.",
+        correct: false,
+      },
+      {
+        a: "Az az eljárás, amikor a fordítóprogram levezeti a template paramétereket a függvényhívásból",
+        correct: true,
+      },
+      {
+        a: "Az az eljárás, amikor linker feloldja a külső függvényhívások paramétereit",
+        correct: false,
+      },
+      {
+        a: "Az az eljárás, amikor default paraméterekkel látjuk el a függvény paramétereket",
+        correct: false,
+      },
     ],
   },
   {
@@ -692,9 +799,18 @@ const cpp = [
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
       { a: "A tömbök és a pointerek mindig ekvivalensek", correct: false },
-      { a: "A tömbaritmetika több műveletet képes elvégezni, mint a pointeraritmetika", correct: false },
-      { a: "A tömböket mindig void* pintertípusként adjuk át a függvénynek", correct: false },
-      { a: "A tömbök mindig konvertálódnak első elemre mutató pointerré", correct: true },
+      {
+        a: "A tömbaritmetika több műveletet képes elvégezni, mint a pointeraritmetika",
+        correct: false,
+      },
+      {
+        a: "A tömböket mindig void* pintertípusként adjuk át a függvénynek",
+        correct: false,
+      },
+      {
+        a: "A tömbök mindig konvertálódnak első elemre mutató pointerré",
+        correct: true,
+      },
     ],
   },
   {
@@ -720,10 +836,22 @@ const cpp = [
   {
     q: "Mikor nevezünk erősen típusosnak egy nyelvet?",
     a: [
-      { a: "Erősen típusos, ha a fordítóprogram ellenőrzi, hogy definiált-e egy objektum vagy alprogram", correct: false },
-      { a: "Erősen típusos, ha minden kifelyezés és részkifelyezés típusa futási időben meghatározott.", correct: false },
-      { a: "Erősen típusos, ha minden kifelyezés és részkifelyezés típusa fordítási időben meghatározott.", correct: true },
-      { a: "Erősen típusos, ha futási időben nem keletkezik kivétel.", correct: false },
+      {
+        a: "Erősen típusos, ha a fordítóprogram ellenőrzi, hogy definiált-e egy objektum vagy alprogram",
+        correct: false,
+      },
+      {
+        a: "Erősen típusos, ha minden kifelyezés és részkifelyezés típusa futási időben meghatározott.",
+        correct: false,
+      },
+      {
+        a: "Erősen típusos, ha minden kifelyezés és részkifelyezés típusa fordítási időben meghatározott.",
+        correct: true,
+      },
+      {
+        a: "Erősen típusos, ha futási időben nem keletkezik kivétel.",
+        correct: false,
+      },
     ],
   },
   {
@@ -738,8 +866,14 @@ const cpp = [
   {
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
-      { a: "A typedef konstrukcióból nem lehet sablont (template-t) írni", correct: false },
-      { a: "Nem lehet sablon (template) tagfüggvénye egy nem-template osztálynak", correct: false },
+      {
+        a: "A typedef konstrukcióból nem lehet sablont (template-t) írni",
+        correct: false,
+      },
+      {
+        a: "Nem lehet sablon (template) tagfüggvénye egy nem-template osztálynak",
+        correct: false,
+      },
       { a: "Az enum konstrukcióból nem lehet sablont írni", correct: false },
       { a: "A struct konstrukcióból nem lehet sablont írni", correct: true },
     ],
@@ -748,8 +882,14 @@ const cpp = [
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
       { a: "A C++ engedélyezi a többszörös öröklődést", correct: true },
-      { a: "Nem lehet alkalmazni a többszörös öröklődést, ha azonosító ütközés lépne fel.", correct: false },
-      { a: "Csak akkor használható többszörös öröklődés, ha sz összes bázisosztálynak van virtuális destruktora.", correct: false },
+      {
+        a: "Nem lehet alkalmazni a többszörös öröklődést, ha azonosító ütközés lépne fel.",
+        correct: false,
+      },
+      {
+        a: "Csak akkor használható többszörös öröklődés, ha sz összes bázisosztálynak van virtuális destruktora.",
+        correct: false,
+      },
       { a: "A C++ tiltja a többszörös öröklődést.", correct: false },
     ],
   },
@@ -766,10 +906,16 @@ const cpp = [
   {
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
-      { a: "A sizeof(int) == sizeof(const int*) reláció mindig igaz.", correct: false },
+      {
+        a: "A sizeof(int) == sizeof(const int*) reláció mindig igaz.",
+        correct: false,
+      },
       { a: "Egy const int* típusú pointer mutathat változóra", correct: true },
       { a: "Egy const int* típusú pointer mérete 4 byte", correct: false },
-      { a: "Egy const int* típusú pointer megváltoztathatja a mutatott értéket", correct: false },
+      {
+        a: "Egy const int* típusú pointer megváltoztathatja a mutatott értéket",
+        correct: false,
+      },
     ],
   },
   {
@@ -785,19 +931,30 @@ const cpp = [
     q: "C++ kódban lévő makrókat melyik egység dolgozza fel az alábbiak közül?",
     a: [
       { a: "preprocesszor", correct: true },
-      { a: "A szabványos C++ kódban nem is írhatunk makrókat (csak C-ben)", correct: false },
+      {
+        a: "A szabványos C++ kódban nem is írhatunk makrókat (csak C-ben)",
+        correct: false,
+      },
       { a: "asembler", correct: false },
       { a: "linker", correct: false },
     ],
-    img: ".png",
   },
   {
     q: "Adott egy típus melynek mérete nem egyezik meg a típus adattagjai méreteinek összegével. Mi történhetett.",
     a: [
-      { a: "Megörököltük annak az osztálynak az adattagjait is, amelyik minden C++ osztálynak az őse", correct: false },
-      { a: "Megfeletkeztünk a header guardokról és több helyen is be include-oltuk a header filet", correct: false },
+      {
+        a: "Megörököltük annak az osztálynak az adattagjait is, amelyik minden C++ osztálynak az őse",
+        correct: false,
+      },
+      {
+        a: "Megfeletkeztünk a header guardokról és több helyen is be include-oltuk a header filet",
+        correct: false,
+      },
       { a: "Találtunk egy bugot a fortdítóprogramban", correct: false },
-      { a: "A fordítóprogram szóhatárra optimalizálta az adattagokat", correct: true },
+      {
+        a: "A fordítóprogram szóhatárra optimalizálta az adattagokat",
+        correct: true,
+      },
     ],
   },
   {
@@ -813,8 +970,14 @@ const cpp = [
     q: "Adott egy típus, melynek mérete nem egyezik meg a típus adattagjai méreteinek összegével. Mi történhetett?",
     a: [
       { a: "A this pointer miatt nagyobb az osztály mérete.", correct: false },
-      { a: "Megörököltük azt az osztályt mely minden C++ osztálynak az őse", correct: false },
-      { a: "Az osztályunknak van egy virtuális függvénye, így létrejött a virtuális tábla pointer", correct: true },
+      {
+        a: "Megörököltük azt az osztályt mely minden C++ osztálynak az őse",
+        correct: false,
+      },
+      {
+        a: "Az osztályunknak van egy virtuális függvénye, így létrejött a virtuális tábla pointer",
+        correct: true,
+      },
       { a: "Találtunk egy bugot a fordítóprogramban", correct: false },
     ],
   },
@@ -831,9 +994,18 @@ const cpp = [
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
       { a: "A long típust 8 byteon ábrázolja a C++", correct: false },
-      { a: "A sizeof(int) <= sizeof(long int) reláció mindig igaz", correct: true },
-      { a: "A szabványos C++ nem definiálja a long long típust", correct: false },
-      { a: "A sizeof(long double) == sizeof(long long) reláció mindig igaz", correct: false },
+      {
+        a: "A sizeof(int) <= sizeof(long int) reláció mindig igaz",
+        correct: true,
+      },
+      {
+        a: "A szabványos C++ nem definiálja a long long típust",
+        correct: false,
+      },
+      {
+        a: "A sizeof(long double) == sizeof(long long) reláció mindig igaz",
+        correct: false,
+      },
     ],
   },
   {
@@ -846,12 +1018,24 @@ const cpp = [
     ],
   },
   {
-    q: "??? Melyik igaz az alábbiak közül?",
+    q: "Melyik igaz az alábbiak közül?",
     a: [
-      { a: "A fordítóprogram a fenti kódot úgy elemzitovább, hogy a függvény sablon elsősorban egy i nevű pointerrel fedték a globolis int i-t.", correct: false },
-      { a: "A fordítóprogram a fenti kódot úgy elemzi tovább, hogy végeztünk egy szorzást a függvény sablon első sorában.", correct: true },
-      { a: "Nem fedhetjük el a külső i azonosítót, ezért a fenti kód fordításakor fordítási hiba keletkezik.", correct: false },
-      { a: "A fordítóprogramtól függ, hogy a fenti kódban szorzást végzünk vagy egy pointert hozunk létre", correct: false },
+      {
+        a: "A fordítóprogram a fenti kódot úgy elemzitovább, hogy a függvény sablon elsősorban egy i nevű pointerrel fedték a globolis int i-t.",
+        correct: false,
+      },
+      {
+        a: "A fordítóprogram a fenti kódot úgy elemzi tovább, hogy végeztünk egy szorzást a függvény sablon első sorában.",
+        correct: true,
+      },
+      {
+        a: "Nem fedhetjük el a külső i azonosítót, ezért a fenti kód fordításakor fordítási hiba keletkezik.",
+        correct: false,
+      },
+      {
+        a: "A fordítóprogramtól függ, hogy a fenti kódban szorzást végzünk vagy egy pointert hozunk létre",
+        correct: false,
+      },
     ],
     img: "47.png",
   },
@@ -895,10 +1079,19 @@ const cpp = [
   {
     q: "Melyik állítás igaz az alábbiak közül?",
     a: [
-      { a: "Nem lehet ilyan programot írni C++ ban ami adatbázis szerverhez kapcsolódna", correct: false },
-      { a: "Lehet olyan programot írni C++-ban amely fordítás közben algoritmust hajt végre", correct: true },
+      {
+        a: "Nem lehet ilyan programot írni C++ ban ami adatbázis szerverhez kapcsolódna",
+        correct: false,
+      },
+      {
+        a: "Lehet olyan programot írni C++-ban amely fordítás közben algoritmust hajt végre",
+        correct: true,
+      },
       { a: "Nem lehet párhuzamos programot írni C++-ban", correct: false },
-      { a: "Lehet olyan programot írni C++-ban amely fordítás nélkül is futhat.", correct: false },
+      {
+        a: "Lehet olyan programot írni C++-ban amely fordítás nélkül is futhat.",
+        correct: false,
+      },
     ],
   },
   {
@@ -922,9 +1115,18 @@ const cpp = [
   {
     q: "Projektünkben az összes fordítási egység lefordul, de nem jön létre a futtatható állomány a build flyamat végén. Mi lehet a baj.",
     a: [
-      { a: "A build folyamat közben nem találtuk meg a preprocesszor-t", correct: false },
-      { a: "A linker nem talált meg egy dinamikus linkelés library-t", correct: false },
-      { a: "A linker nem talált meg egy statikus linkelés library-t", correct: true },
+      {
+        a: "A build folyamat közben nem találtuk meg a preprocesszor-t",
+        correct: false,
+      },
+      {
+        a: "A linker nem talált meg egy dinamikus linkelés library-t",
+        correct: false,
+      },
+      {
+        a: "A linker nem talált meg egy statikus linkelés library-t",
+        correct: true,
+      },
       { a: "A virtuális destruktork hiányoznak", correct: false },
     ],
   },

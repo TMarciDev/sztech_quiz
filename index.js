@@ -16,13 +16,13 @@ var correct = 0;
 var all = 0;
 var added = 0;
 
-var questions = [...python];
+var questions = [...cpp];
 
 selector.addEventListener("change", (e) => {
   added = 0;
   switch (e.target.value) {
     case "0": {
-      questions = [...python];
+      questions = [...cpp];
       break;
     }
     case "1": {
@@ -38,7 +38,7 @@ selector.addEventListener("change", (e) => {
       break;
     }
     case "5": {
-      questions = [...test];
+      questions = [...python];
       break;
     }
     default: {

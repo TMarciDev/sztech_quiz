@@ -82,7 +82,7 @@ const cpp = [
     a: [
       {
         a: "Az dinamikus változók a változók a stacken jönnek létre",
-        correct: true,
+        correct: false,
       },
       {
         a: "Az dinamikus változók a változók a statikus tárterületen jönnek létre",
@@ -266,7 +266,7 @@ const cpp = [
     q: "Melyik konténer asszociatív?",
     a: [
       { a: "std::queue", correct: false },
-      { a: "std::set", correct: false },
+      { a: "std::set", correct: true },
       { a: "std::vector", correct: false },
       { a: "std::list", correct: false },
     ],
@@ -282,7 +282,7 @@ const cpp = [
     img: "30.png",
   },
   {
-    q: "Az alábbi függvény deklarációk alapján melyik tagfüggvény hívható meg const Foo objektumon?",
+    q: "???Az alábbi függvény deklarációk alapján melyik tagfüggvény hívható meg const Foo objektumon?",
     a: [
       { a: "foo.d(2)", correct: true },
       { a: "foo.c(0)", correct: false },
@@ -292,7 +292,7 @@ const cpp = [
     img: "31.png",
   },
   {
-    q: "Az alábbi típusok közül melyik poliformikus?",
+    q: "Az alábbi típusok közül melyik polimorfikus?",
     a: [
       { a: "A", correct: false },
       { a: "B", correct: false },
@@ -534,7 +534,7 @@ const cpp = [
         correct: false,
       },
       {
-        a: "Deklarációban egy péusz paraméterrel tudjuk megkülönböztetni a postfix operator++-t a prefix-től",
+        a: "Deklarációban egy plusz paraméterrel tudjuk megkülönböztetni a postfix operator++-t a prefix-től",
         correct: true,
       },
       {
@@ -577,12 +577,12 @@ const cpp = [
       },
       {
         a: "Nem lehet származtatni typedef által származtatott típusból.",
-        correct: true,
+        correct: false,
       },
       { a: "A paraméterdedukció futási időben történik.", correct: false },
       {
-        a: "AZ objektumok dinamikus típusát ismeri a fordítóprogram.",
-        correct: false,
+        a: "Az objektumok dinamikus típusát ismeri a fordítóprogram.",
+        correct: true,
       },
     ],
   },
@@ -1104,10 +1104,10 @@ const cpp = [
     ],
   },
   {
-    q: "Melyik paradigma alapjján épül fel a C++ Standard Template Library?",
+    q: "Melyik paradigma alapján épül fel a C++ Standard Template Library?",
     a: [
       { a: "funkcionális", correct: false },
-      { a: "generikus", correct: false },
+      { a: "generikus", correct: true },
       { a: "obejktum-orientált", correct: false },
       { a: "iterator", correct: false },
     ],

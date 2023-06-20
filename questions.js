@@ -282,7 +282,7 @@ const cpp = [
     img: "30.png",
   },
   {
-    q: "???Az alábbi függvény deklarációk alapján melyik tagfüggvény hívható meg const Foo objektumon?",
+    q: "Az alábbi függvény deklarációk alapján melyik tagfüggvény hívható meg const Foo objektumon?",
     a: [
       { a: "foo.d(2)", correct: true },
       { a: "foo.c(0)", correct: false },
@@ -1021,7 +1021,7 @@ const cpp = [
     q: "Melyik igaz az alábbiak közül?",
     a: [
       {
-        a: "A fordítóprogram a fenti kódot úgy elemzitovább, hogy a függvény sablon elsősorban egy i nevű pointerrel fedték a globolis int i-t.",
+        a: "A fordítóprogram a fenti kódot úgy elemzi tovább, hogy a függvény sablon elsősorban egy i nevű pointerrel fedték a globolis int i-t.",
         correct: false,
       },
       {

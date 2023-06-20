@@ -30,7 +30,6 @@ int main()
     std::vector<std::string> s;
     s.push_back("Hello");
     prefix_vector<std::string> sh(s);
-    std::cout << "sh: " << sh.size() << std::endl;
     prefix_vector<std::string> sa(sh);
     sa.push_back("World");
     prefix_vector<std::string> sb(sh);
@@ -47,30 +46,32 @@ int main()
         1 == sh.size() &&
         "Hello" == sa.at(0))
     {
-        std::cout << std::endl
-                  << "SUCCESS" << std::endl;
         your_mark = c.size() - v.size();
     }
 
-    /* 3-as
     std::vector<int> cv = v;
-    prefix_vector<int> cc( cv );
-    prefix_vector<int> cd( cc );
-    cd.push_back( -1 );
-    cc.set( max / 2, 2 );
+    prefix_vector<int> cc(cv);
+    prefix_vector<int> cd(cc);
+    cd.push_back(-1);
+    cc.set(max / 2, 2);
 
-    b.set( max / 2, 0 );
-    sa.push_back( ":-)" );
-    sa.set( 1, "World!" );
+    b.set(max / 2, 0);
+    sa.push_back(":-)");
+    sa.set(1, "World!");
 
-    if ( &( cc.at( max / 3 ) ) == &( cd.at( max / 3 ) ) && 0 == b.at( max / 2 ) &&
-         cc.at( max / 2 ) == your_mark && max / 2 == cd.at( max / 2 ) &&
-         -1 == cd.at( max ) && max == cc.size() && max + 1 == cd.size() &&
-         3 == sa.at( 2 ).size() && 6 == sa.at( 1 ).size() )
+    if (
+        &(cc.at(max / 3)) == &(cd.at(max / 3)) &&
+        0 == b.at(max / 2) &&
+        cc.at(max / 2) == your_mark &&
+        max / 2 == cd.at(max / 2) &&
+        -1 == cd.at(max) &&
+        max == cc.size() &&
+        max + 1 == cd.size() &&
+        3 == sa.at(2).size() &&
+        6 == sa.at(1).size())
     {
-      your_mark = sa.size();
+        your_mark = sa.size();
     }
-    */
     /* 4-es
     int iar[] = { 7, 2, 1, 7, 5 };
     prefix_vector<int> ap( iar );

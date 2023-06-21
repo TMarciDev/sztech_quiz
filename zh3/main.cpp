@@ -7,7 +7,6 @@
 template <int N>
 struct congruent
 {
-
     bool operator()(int a, int b) const
     {
         return a % N == b % N;
@@ -77,36 +76,49 @@ int main()
         your_mark = ds.size();
     }
 
-    /* 4-es
-    domino<int, congruent<5> > dcf( std::make_pair( 3, 7 ) );
-    dcf.push_back( std::make_pair( 2, 2 ) );
-    dcf >> std::make_pair( 3, 12 );
-    dcf >> std::make_pair( 1, 1 );
-    std::make_pair( 8, 2 ) << dcf;
-    std::make_pair( 18, 18 ) >> dcf;
+    domino<int, congruent<5>> dcf(std::make_pair(3, 7));
+    dcf.push_back(std::make_pair(2, 2));
+    dcf >> std::make_pair(3, 12);
+    dcf >> std::make_pair(1, 1);
+    std::make_pair(8, 2) << dcf;
+    std::make_pair(18, 18) >> dcf;
 
-    domino<int, congruent<2> > dct( std::make_pair( 1, 1 ) );
-    dct >> std::make_pair( 4, 3 );
+    domino<int, congruent<2>> dct(std::make_pair(1, 1));
+    dct >> std::make_pair(4, 3);
 
-    domino<int, congruent<2> > edct( std::make_pair( 3, 3 ) );
-    edct >> std::make_pair( 8, 9 );
+    domino<int, congruent<2>> edct(std::make_pair(3, 3));
+    edct >> std::make_pair(8, 9);
 
-    domino<std::string, equal_length> dse( std::make_pair( "C++", "C" ) );
-    std::make_pair<std::string, std::string>( "Ada", "Python" ) >> dse;
+    domino<std::string, equal_length> dse(std::make_pair("C++", "C"));
+    std::make_pair<std::string, std::string>("Ada", "Python") >> dse;
 
-    domino<std::string, equal_length> ndse( std::make_pair( "C++", "C" ) );
+    domino<std::string, equal_length> ndse(std::make_pair("C++", "C"));
 
-    domino<std::string> eds( std::make_pair( "C", "C++" ) );
-    eds << ( std::make_pair( "C", "Python" ) );
-    eds << ( std::make_pair( "Rust", "Python" ) );
+    domino<std::string> eds(std::make_pair("C", "C++"));
+    eds << (std::make_pair("C", "Python"));
+    eds << (std::make_pair("Rust", "Python"));
 
-    if ( !( dse.push_back( std::make_pair( "Brainfuck", "Haskell" ) ) ) &&
-         edct.equals( dct ) && !ndse.equals( dse ) && dct.size() == dse.size() &&
-         !( cdi.equals( dim ) ) && eds.equals( ds ) && 5 == dcf.size() )
-    {
-      your_mark = cdi.size();
+    if(edct.equals(dct)) {
+        std::cout << "yee\n";
     }
-    */
+
+    if (
+        !(dse.push_back(std::make_pair("Brainfuck", "Haskell"))) &&
+        edct.equals(dct) && // fail
+        !ndse.equals(dse) &&
+        dct.size() == dse.size() &&
+        !(cdi.equals(dim)) &&
+        eds.equals(ds) &&
+        5 == dcf.size())
+    {
+        std::cout << "SUCCESS\n";
+
+        your_mark = cdi.size();
+    }
+    else
+    {
+        std::cout << "FAIL\n";
+    }
     /* 5-os
     domino<int, congruent<3> > a( std::make_pair( 2, 4 ) );
     a >> std::make_pair( 7, 7 );

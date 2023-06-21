@@ -17,6 +17,29 @@ public:
         line.push_back(pair);
     }
 
+    //* push_back
+    bool operator>>(std::pair<T, T> const &pair)
+    {
+        return push_back(pair);
+    }
+
+    //* push_front
+    bool operator<<(std::pair<T, T> const &pair)
+    {
+        return push_front(pair);
+    }
+
+    //* push_front
+    friend bool operator>>(std::pair<T, T> const &pair, domino<T>& d)
+    {
+        return d.push_front(pair);
+    }
+    //* push_back
+    friend bool operator<<(std::pair<T, T> const &pair, domino<T>& d)
+    {
+        return d.push_back(pair);
+    }
+
     bool push_back(std::pair<T, T> pair)
     {
         if (line.back().second == pair.first)

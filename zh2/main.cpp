@@ -58,18 +58,25 @@ int main()
         your_mark = ds.size();
     }
 
-    /* 3-as
-    ds >> std::make_pair( "Python", "Rust" );
-    ds >> std::make_pair( "Haskell", "Scala" );
-    ds << std::make_pair( "Ada", "Pascal" );
-    std::make_pair( 2, 0 ) >> dim;
-    std::make_pair( 4, 4 ) >> dim;
+    // push_back
+    ds >> std::make_pair("Python", "Rust");
 
-    if ( 2 + max == dim.size() && !( std::make_pair( 8, 8 ) << di ) )
+    // push_back
+    ds >> std::make_pair("Haskell", "Scala");
+
+    // push_front
+    ds << std::make_pair("Ada", "Pascal");
+
+    // push_front
+    std::make_pair(2, 0) >> dim;
+
+    if (
+        2 + max == dim.size() &&
+        !(std::make_pair(8, 8) << di))
     {
-      your_mark = ds.size();
+        your_mark = ds.size();
     }
-    */
+
     /* 4-es
     domino<int, congruent<5> > dcf( std::make_pair( 3, 7 ) );
     dcf.push_back( std::make_pair( 2, 2 ) );

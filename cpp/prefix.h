@@ -35,7 +35,8 @@ public:
 	// {
 
 	// }
-	operator std::vector<T>() const {
+	operator std::vector<T>() const
+	{
 		std::vector<T> emptyVector;
 		return emptyVector;
 	}

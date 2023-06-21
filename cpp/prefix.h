@@ -4,7 +4,6 @@
 
 #include <vector>
 #include <map>
-
 template <typename T>
 class prefix_vector
 {
@@ -18,6 +17,27 @@ public:
 	prefix_vector(prefix_vector<T> &p_v)
 	{
 		vector_base = p_v.vector_base;
+	}
+
+	template <size_t N>
+	prefix_vector(T (&arr)[N])
+	{
+		vector_base = new std::vector<T>();
+		vector_base->reserve(N);
+
+		for (const auto &element : arr)
+		{
+			vector_base->push_back(element);
+		}
+	}
+
+	// std::vector<T> operator=(const prefix_vector<T> p_v)
+	// {
+
+	// }
+	operator std::vector<T>() const {
+		std::vector<T> emptyVector;
+		return emptyVector;
 	}
 
 	void set(int idx, T elem)
@@ -59,6 +79,11 @@ public:
 	{
 		return vector_base->size() + vector_extended.size();
 	}
+
+	// ~prefix_vector()
+	// {
+	// 	//delete vector_base;
+	// }
 };
 
 #endif

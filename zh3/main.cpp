@@ -98,17 +98,13 @@ int main()
     eds << (std::make_pair("C", "Python"));
     eds << (std::make_pair("Rust", "Python"));
 
-    if(edct.equals(dct)) {
-        std::cout << "yee\n";
-    }
-
     if (
         !(dse.push_back(std::make_pair("Brainfuck", "Haskell"))) &&
-        edct.equals(dct) && // fail
+        edct.equals(dct) &&
         !ndse.equals(dse) &&
         dct.size() == dse.size() &&
         !(cdi.equals(dim)) &&
-        eds.equals(ds) &&
+        eds.equals(ds) && // fail
         5 == dcf.size())
     {
         std::cout << "SUCCESS\n";
@@ -119,6 +115,7 @@ int main()
     {
         std::cout << "FAIL\n";
     }
+    
     /* 5-os
     domino<int, congruent<3> > a( std::make_pair( 2, 4 ) );
     a >> std::make_pair( 7, 7 );

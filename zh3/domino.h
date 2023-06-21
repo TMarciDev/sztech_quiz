@@ -1,5 +1,4 @@
 #ifndef header
-// #include <typeinfo>
 #define header
 
 #include <list>
@@ -29,40 +28,43 @@ public:
         line.push_back(pair.second);
     }
 
+    void print()
+    {
+        for (auto const &i : line)
+        {
+            std::cout << i << ", ";
+        }
+        std::cout << std::endl;
+    }
+
     equals(domino d) const
     {
-        /*
-        if (d.size() != line.size())
-            return false;
-        // int same = 0;
 
-        typename std::list<T>::iterator it;
-        for (it = line.begin(); it != line.end(); ++it)
+        if (d.size() != size())
         {
-            std::cout << "hali\n";
-        } */
-
-        /*         for(int i = 0; i < d.size(); ++i) {
-                    if(line.at(i) != d.at(i) || line.at(i) != )
-                } */
-        if(line == d.getLine()) {
-            return true;
-        } else {
-            std::list<T> line2(line);
-            line2.reverse();
-            return line2 == d.getLine();
+            return false;
         }
 
-        //return false;
-        //return line == d.getLine() || line.reverse() == d.getLine();
+        typename std::list<T>::const_iterator it1 = line.begin();
+        typename std::list<T>::const_iterator it2 = d.getLine().begin();
+        typename std::list<T>::const_iterator it1_r = line.end();
+        --it1_r;
+
+        for (; it1 != line.end();)
+        {
+            if (!assert(*it1, *it2) && !assert(*it1_r, *it2))
+            {
+                return false;
+            }
+            ++it1;
+            ++it2;
+            --it1_r;
+        }
+        return true;
     }
     std::list<T> getLine()
     {
         return line;
-    }
-    T at(int idx)
-    {
-        return line[idx];
     }
 
     //* push_back
